@@ -19,3 +19,5 @@ set_slam.egg-info/requires.txt
 set_slam.egg-info/top_level.txt
 set_slam.egg-info/zip-safe
 set_slam/launch/slam_launch.py
+set_slam/nodes/__init__.py
+set_slam/nodes/odom_to_tf_broadcaster.py

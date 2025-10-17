@@ -2,7 +2,7 @@
 # 1. bu dosya çalıştırılacak cd raspberry && ros2 run publish_odom get_odometry_from_rasbery
 # 2. windowstaki odom_tools.py adlı dosya çalıştırılacak
 # 3. raspberry den veri gönderecek olan get_rpm.py dosyası çalıştırılacak (cd set_slam_ws && sudo -E python3 get_rpm.py)
-# eğer motorları ilk defa çalıştıracaksan 
+# eğer motorları ilk defa çalıştıracaksan (cd set_slam_ws && sudo -E python3 first_run_motors.py) 
 # komut satırında rviz2 çalıştırılacak ve fixed frame yerine kendi elinle odom yazacaksın
 # ardından add tıklanacak ve odometry eklenecek
 #!/usr/bin/env python3

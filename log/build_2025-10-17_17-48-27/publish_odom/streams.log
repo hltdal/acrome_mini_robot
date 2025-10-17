@@ -1,0 +1,19 @@
+[0.925s] Invoking command in '/home/halit/acrome_mini_robot/build/publish_odom': PYTHONPATH=/home/halit/acrome_mini_robot/build/publish_odom/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/publish_odom/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/halit/acrome_mini_robot/build/publish_odom/build --no-deps symlink_data --force
+[1.168s] running develop
+[1.318s] running egg_info
+[1.334s] writing publish_odom.egg-info/PKG-INFO
+[1.334s] writing dependency_links to publish_odom.egg-info/dependency_links.txt
+[1.334s] writing entry points to publish_odom.egg-info/entry_points.txt
+[1.334s] writing requirements to publish_odom.egg-info/requires.txt
+[1.334s] writing top-level names to publish_odom.egg-info/top_level.txt
+[1.361s] reading manifest file 'publish_odom.egg-info/SOURCES.txt'
+[1.362s] writing manifest file 'publish_odom.egg-info/SOURCES.txt'
+[1.378s] running build_ext
+[1.378s] Creating /home/halit/acrome_mini_robot/install/publish_odom/lib/python3.12/site-packages/publish-odom.egg-link (link to .)
+[1.379s] Installing get_odometry_from_rasbery script to /home/halit/acrome_mini_robot/install/publish_odom/lib/publish_odom
+[1.379s] 
+[1.379s] Installed /home/halit/acrome_mini_robot/build/publish_odom
+[1.379s] running symlink_data
+[1.381s] symbolically linking /home/halit/acrome_mini_robot/build/publish_odom/resource/publish_odom -> /home/halit/acrome_mini_robot/install/publish_odom/share/ament_index/resource_index/packages
+[1.381s] symbolically linking /home/halit/acrome_mini_robot/build/publish_odom/package.xml -> /home/halit/acrome_mini_robot/install/publish_odom/share/publish_odom
+[1.418s] Invoked command in '/home/halit/acrome_mini_robot/build/publish_odom' returned '0': PYTHONPATH=/home/halit/acrome_mini_robot/build/publish_odom/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/publish_odom/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/halit/acrome_mini_robot/build/publish_odom/build --no-deps symlink_data --force

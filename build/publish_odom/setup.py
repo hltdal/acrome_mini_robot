@@ -1,1 +1,1 @@
-/home/halit/raspberry/src/publish_odom/setup.py
+/home/halit/acrome_mini_robot/src/publish_odom/setup.py

@@ -1,1 +1,1 @@
-/home/halit/raspberry/build/set_slam/set_slam/launch/slam_launch.py
+/home/halit/acrome_mini_robot/build/set_slam/set_slam/launch/slam_launch.py

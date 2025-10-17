@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing publish_lidar.egg-info/PKG-INFO
+writing dependency_links to publish_lidar.egg-info/dependency_links.txt
+writing entry points to publish_lidar.egg-info/entry_points.txt
+writing requirements to publish_lidar.egg-info/requires.txt
+writing top-level names to publish_lidar.egg-info/top_level.txt
+reading manifest file 'publish_lidar.egg-info/SOURCES.txt'
+writing manifest file 'publish_lidar.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish-lidar.egg-link (link to .)
+Installing get_scan_from_raspbery script to /home/halit/acrome_mini_robot/install/publish_lidar/lib/publish_lidar
+
+Installed /home/halit/acrome_mini_robot/build/publish_lidar
+running symlink_data
+symbolically linking /home/halit/acrome_mini_robot/build/publish_lidar/resource/publish_lidar -> /home/halit/acrome_mini_robot/install/publish_lidar/share/ament_index/resource_index/packages
+symbolically linking /home/halit/acrome_mini_robot/build/publish_lidar/package.xml -> /home/halit/acrome_mini_robot/install/publish_lidar/share/publish_lidar

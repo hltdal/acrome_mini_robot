@@ -1,1 +1,1 @@
-/home/halit/raspberry/src/set_slam/setup.py
+/home/halit/acrome_mini_robot/src/set_slam/setup.py
