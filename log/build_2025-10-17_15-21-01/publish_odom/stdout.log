@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing publish_odom.egg-info/PKG-INFO
+writing dependency_links to publish_odom.egg-info/dependency_links.txt
+writing entry points to publish_odom.egg-info/entry_points.txt
+writing requirements to publish_odom.egg-info/requires.txt
+writing top-level names to publish_odom.egg-info/top_level.txt
+reading manifest file 'publish_odom.egg-info/SOURCES.txt'
+writing manifest file 'publish_odom.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/halit/raspberry/install/publish_odom/lib/python3.12/site-packages/publish-odom.egg-link (link to .)
+Installing get_odometry_from_rasbery script to /home/halit/raspberry/install/publish_odom/lib/publish_odom
+
+Installed /home/halit/raspberry/build/publish_odom
+running symlink_data
+symbolically linking /home/halit/raspberry/build/publish_odom/resource/publish_odom -> /home/halit/raspberry/install/publish_odom/share/ament_index/resource_index/packages
+symbolically linking /home/halit/raspberry/build/publish_odom/package.xml -> /home/halit/raspberry/install/publish_odom/share/publish_odom

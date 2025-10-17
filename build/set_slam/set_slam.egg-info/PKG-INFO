@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: set-slam
+Version: 0.0.0
+Summary: SLAM setup using slam_toolbox with odom and scan topics
+Maintainer: halit
+Maintainer-email: halit@example.com
+License: MIT

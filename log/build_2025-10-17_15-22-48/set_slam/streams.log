@@ -1,0 +1,21 @@
+[0.972s] Invoking command in '/home/halit/raspberry/build/set_slam': PYTHONPATH=/home/halit/raspberry/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/set_slam/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/halit/raspberry/build/set_slam/build --no-deps symlink_data
+[1.238s] running develop
+[1.435s] running egg_info
+[1.451s] writing set_slam.egg-info/PKG-INFO
+[1.451s] writing dependency_links to set_slam.egg-info/dependency_links.txt
+[1.451s] writing entry points to set_slam.egg-info/entry_points.txt
+[1.451s] writing requirements to set_slam.egg-info/requires.txt
+[1.451s] writing top-level names to set_slam.egg-info/top_level.txt
+[1.483s] reading manifest file 'set_slam.egg-info/SOURCES.txt'
+[1.483s] writing manifest file 'set_slam.egg-info/SOURCES.txt'
+[1.498s] running build_ext
+[1.498s] Creating /home/halit/raspberry/install/set_slam/lib/python3.12/site-packages/set-slam.egg-link (link to .)
+[1.499s] Installing odom_to_tf_broadcaster script to /home/halit/raspberry/install/set_slam/lib/set_slam
+[1.499s] 
+[1.499s] Installed /home/halit/raspberry/build/set_slam
+[1.500s] running symlink_data
+[1.500s] creating /home/halit/raspberry/install/set_slam/share/set_slam/launch
+[1.500s] symbolically linking /home/halit/raspberry/build/set_slam/set_slam/launch/slam_launch.py -> /home/halit/raspberry/install/set_slam/share/set_slam/launch
+[1.500s] creating /home/halit/raspberry/install/set_slam/share/set_slam/config
+[1.500s] symbolically linking /home/halit/raspberry/build/set_slam/config/mapper_params_online_sync.yaml -> /home/halit/raspberry/install/set_slam/share/set_slam/config
+[1.540s] Invoked command in '/home/halit/raspberry/build/set_slam' returned '0': PYTHONPATH=/home/halit/raspberry/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/set_slam/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/halit/raspberry/build/set_slam/build --no-deps symlink_data

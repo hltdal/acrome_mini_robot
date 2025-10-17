@@ -1,0 +1,2 @@
+[console_scripts]
+get_odometry_from_rasbery = publish_odom.get_odometry_from_rasbery:main

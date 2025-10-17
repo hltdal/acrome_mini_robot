@@ -1,0 +1,35 @@
+[1.085s] Invoking command in '/home/halit/raspberry/src/publish_lidar': PYTHONPATH=/home/halit/raspberry/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/publish_lidar build --build-base /home/halit/raspberry/build/publish_lidar/build install --record /home/halit/raspberry/build/publish_lidar/install.log --single-version-externally-managed install_data
+[1.314s] running egg_info
+[1.314s] creating ../../build/publish_lidar/publish_lidar.egg-info
+[1.330s] writing ../../build/publish_lidar/publish_lidar.egg-info/PKG-INFO
+[1.330s] writing dependency_links to ../../build/publish_lidar/publish_lidar.egg-info/dependency_links.txt
+[1.330s] writing requirements to ../../build/publish_lidar/publish_lidar.egg-info/requires.txt
+[1.330s] writing top-level names to ../../build/publish_lidar/publish_lidar.egg-info/top_level.txt
+[1.332s] writing manifest file '../../build/publish_lidar/publish_lidar.egg-info/SOURCES.txt'
+[1.363s] reading manifest file '../../build/publish_lidar/publish_lidar.egg-info/SOURCES.txt'
+[1.364s] writing manifest file '../../build/publish_lidar/publish_lidar.egg-info/SOURCES.txt'
+[1.364s] running build
+[1.365s] running build_py
+[1.365s] creating /home/halit/raspberry/build/publish_lidar/build
+[1.365s] creating /home/halit/raspberry/build/publish_lidar/build/lib
+[1.365s] creating /home/halit/raspberry/build/publish_lidar/build/lib/publish_lidar
+[1.366s] copying publish_lidar/get_scan_from_raspbery.py -> /home/halit/raspberry/build/publish_lidar/build/lib/publish_lidar
+[1.366s] copying publish_lidar/__init__.py -> /home/halit/raspberry/build/publish_lidar/build/lib/publish_lidar
+[1.366s] running install
+[1.371s] running install_lib
+[1.388s] creating /home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages/publish_lidar
+[1.388s] copying /home/halit/raspberry/build/publish_lidar/build/lib/publish_lidar/get_scan_from_raspbery.py -> /home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages/publish_lidar
+[1.389s] copying /home/halit/raspberry/build/publish_lidar/build/lib/publish_lidar/__init__.py -> /home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages/publish_lidar
+[1.389s] byte-compiling /home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/get_scan_from_raspbery.py to get_scan_from_raspbery.cpython-312.pyc
+[1.390s] byte-compiling /home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/__init__.py to __init__.cpython-312.pyc
+[1.391s] running install_data
+[1.391s] creating /home/halit/raspberry/install/publish_lidar/share/ament_index
+[1.391s] creating /home/halit/raspberry/install/publish_lidar/share/ament_index/resource_index
+[1.391s] creating /home/halit/raspberry/install/publish_lidar/share/ament_index/resource_index/packages
+[1.392s] copying resource/publish_lidar -> /home/halit/raspberry/install/publish_lidar/share/ament_index/resource_index/packages
+[1.392s] copying package.xml -> /home/halit/raspberry/install/publish_lidar/share/publish_lidar
+[1.392s] running install_egg_info
+[1.409s] Copying ../../build/publish_lidar/publish_lidar.egg-info to /home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages/publish_lidar-0.0.0-py3.12.egg-info
+[1.411s] running install_scripts
+[1.522s] writing list of installed files to '/home/halit/raspberry/build/publish_lidar/install.log'
+[1.570s] Invoked command in '/home/halit/raspberry/src/publish_lidar' returned '0': PYTHONPATH=/home/halit/raspberry/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/publish_lidar build --build-base /home/halit/raspberry/build/publish_lidar/build install --record /home/halit/raspberry/build/publish_lidar/install.log --single-version-externally-managed install_data

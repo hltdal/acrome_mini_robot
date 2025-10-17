@@ -1,0 +1,208 @@
+[0.165s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.165s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x70679bb96ea0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x70679bb96ae0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x70679bb96ae0>>, mixin_verb=('build',))
+[0.195s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.196s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.196s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.196s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.196s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.196s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.196s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/halit/raspberry'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ignore'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ignore_ament_install'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['colcon_pkg']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'colcon_pkg'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['colcon_meta']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'colcon_meta'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['ros']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ros'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['cmake', 'python']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'cmake'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'python'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['python_setup_py']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'python_setup_py'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extensions ['ignore', 'ignore_ament_install']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extension 'ignore'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extension 'ignore_ament_install'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extensions ['colcon_pkg']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extension 'colcon_pkg'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extensions ['colcon_meta']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extension 'colcon_meta'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extensions ['ros']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extension 'ros'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extensions ['cmake', 'python']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extension 'cmake'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extension 'python'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extensions ['python_setup_py']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(rasberydekiler) by extension 'python_setup_py'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extensions ['ignore', 'ignore_ament_install']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extension 'ignore'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extension 'ignore_ament_install'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extensions ['colcon_pkg']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extension 'colcon_pkg'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extensions ['colcon_meta']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extension 'colcon_meta'
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extensions ['ros']
+[0.219s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_lidar) by extension 'ros'
+[0.220s] DEBUG:colcon.colcon_core.package_identification:Package 'src/publish_lidar' with type 'ros.ament_python' and name 'publish_lidar'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extensions ['ignore', 'ignore_ament_install']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extension 'ignore'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extension 'ignore_ament_install'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extensions ['colcon_pkg']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extension 'colcon_pkg'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extensions ['colcon_meta']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extension 'colcon_meta'
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extensions ['ros']
+[0.221s] Level 1:colcon.colcon_core.package_identification:_identify(src/publish_odom) by extension 'ros'
+[0.221s] DEBUG:colcon.colcon_core.package_identification:Package 'src/publish_odom' with type 'ros.ament_python' and name 'publish_odom'
+[0.221s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.221s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.221s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.221s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.221s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.236s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/halit/raspberry/install
+[0.236s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/halit/acrome_ws/install
+[0.237s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 388 installed packages in /opt/ros/jazzy
+[0.239s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'cmake_args' from command line to 'None'
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'cmake_target' from command line to 'None'
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'cmake_clean_cache' from command line to 'False'
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'cmake_clean_first' from command line to 'False'
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'cmake_force_configure' from command line to 'False'
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'ament_cmake_args' from command line to 'None'
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'catkin_cmake_args' from command line to 'None'
+[0.272s] Level 5:colcon.colcon_core.verb:set package 'publish_lidar' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.272s] DEBUG:colcon.colcon_core.verb:Building package 'publish_lidar' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/halit/raspberry/build/publish_lidar', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/halit/raspberry/install/publish_lidar', 'merge_install': False, 'path': '/home/halit/raspberry/src/publish_lidar', 'symlink_install': False, 'test_result_base': None}
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'cmake_target' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'cmake_clean_cache' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'cmake_clean_first' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'cmake_force_configure' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'ament_cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'catkin_cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'publish_odom' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.273s] DEBUG:colcon.colcon_core.verb:Building package 'publish_odom' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/halit/raspberry/build/publish_odom', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/halit/raspberry/install/publish_odom', 'merge_install': False, 'path': '/home/halit/raspberry/src/publish_odom', 'symlink_install': False, 'test_result_base': None}
+[0.273s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.274s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.274s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/halit/raspberry/src/publish_lidar' with build type 'ament_python'
+[0.274s] Level 1:colcon.colcon_core.shell:create_environment_hook('publish_lidar', 'ament_prefix_path')
+[0.276s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.276s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/hook/ament_prefix_path.ps1'
+[0.277s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/hook/ament_prefix_path.dsv'
+[0.277s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/hook/ament_prefix_path.sh'
+[0.277s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.278s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.280s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/halit/raspberry/src/publish_odom' with build type 'ament_python'
+[0.280s] Level 1:colcon.colcon_core.shell:create_environment_hook('publish_odom', 'ament_prefix_path')
+[0.280s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/halit/raspberry/install/publish_odom/share/publish_odom/hook/ament_prefix_path.ps1'
+[0.281s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/halit/raspberry/install/publish_odom/share/publish_odom/hook/ament_prefix_path.dsv'
+[0.281s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/halit/raspberry/install/publish_odom/share/publish_odom/hook/ament_prefix_path.sh'
+[0.281s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.281s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.437s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/halit/raspberry/src/publish_lidar'
+[0.437s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.437s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.588s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/halit/raspberry/src/publish_odom'
+[0.588s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.588s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.048s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/halit/raspberry/src/publish_odom': PYTHONPATH=/home/halit/raspberry/build/publish_odom/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/publish_odom/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/publish_odom build --build-base /home/halit/raspberry/build/publish_odom/build install --record /home/halit/raspberry/build/publish_odom/install.log --single-version-externally-managed install_data
+[1.050s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/halit/raspberry/src/publish_lidar': PYTHONPATH=/home/halit/raspberry/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/publish_lidar build --build-base /home/halit/raspberry/build/publish_lidar/build install --record /home/halit/raspberry/build/publish_lidar/install.log --single-version-externally-managed install_data
+[1.457s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/halit/raspberry/src/publish_lidar' returned '0': PYTHONPATH=/home/halit/raspberry/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/publish_lidar build --build-base /home/halit/raspberry/build/publish_lidar/build install --record /home/halit/raspberry/build/publish_lidar/install.log --single-version-externally-managed install_data
+[1.458s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_lidar' for CMake module files
+[1.459s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_lidar' for CMake config files
+[1.459s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_lidar/lib'
+[1.459s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_lidar/bin'
+[1.459s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_lidar/lib/pkgconfig/publish_lidar.pc'
+[1.459s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_lidar/lib/python3.12/site-packages'
+[1.460s] Level 1:colcon.colcon_core.shell:create_environment_hook('publish_lidar', 'pythonpath')
+[1.460s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/hook/pythonpath.ps1'
+[1.460s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/hook/pythonpath.dsv'
+[1.460s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/hook/pythonpath.sh'
+[1.461s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_lidar/bin'
+[1.461s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(publish_lidar)
+[1.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/package.ps1'
+[1.461s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/package.dsv'
+[1.462s] INFO:colcon.colcon_core.shell:Creating package script '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/package.sh'
+[1.462s] INFO:colcon.colcon_core.shell:Creating package script '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/package.bash'
+[1.463s] INFO:colcon.colcon_core.shell:Creating package script '/home/halit/raspberry/install/publish_lidar/share/publish_lidar/package.zsh'
+[1.463s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/halit/raspberry/install/publish_lidar/share/colcon-core/packages/publish_lidar)
+[1.464s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_odom' for CMake module files
+[1.465s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/halit/raspberry/src/publish_odom' returned '0': PYTHONPATH=/home/halit/raspberry/build/publish_odom/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/publish_odom/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/publish_odom build --build-base /home/halit/raspberry/build/publish_odom/build install --record /home/halit/raspberry/build/publish_odom/install.log --single-version-externally-managed install_data
+[1.465s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_odom' for CMake config files
+[1.466s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_odom/lib'
+[1.466s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_odom/bin'
+[1.466s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_odom/lib/pkgconfig/publish_odom.pc'
+[1.466s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_odom/lib/python3.12/site-packages'
+[1.466s] Level 1:colcon.colcon_core.shell:create_environment_hook('publish_odom', 'pythonpath')
+[1.466s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/halit/raspberry/install/publish_odom/share/publish_odom/hook/pythonpath.ps1'
+[1.466s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/halit/raspberry/install/publish_odom/share/publish_odom/hook/pythonpath.dsv'
+[1.467s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/halit/raspberry/install/publish_odom/share/publish_odom/hook/pythonpath.sh'
+[1.467s] Level 1:colcon.colcon_core.environment:checking '/home/halit/raspberry/install/publish_odom/bin'
+[1.467s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(publish_odom)
+[1.467s] INFO:colcon.colcon_core.shell:Creating package script '/home/halit/raspberry/install/publish_odom/share/publish_odom/package.ps1'
+[1.468s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/halit/raspberry/install/publish_odom/share/publish_odom/package.dsv'
+[1.468s] INFO:colcon.colcon_core.shell:Creating package script '/home/halit/raspberry/install/publish_odom/share/publish_odom/package.sh'
+[1.468s] INFO:colcon.colcon_core.shell:Creating package script '/home/halit/raspberry/install/publish_odom/share/publish_odom/package.bash'
+[1.468s] INFO:colcon.colcon_core.shell:Creating package script '/home/halit/raspberry/install/publish_odom/share/publish_odom/package.zsh'
+[1.469s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/halit/raspberry/install/publish_odom/share/colcon-core/packages/publish_odom)
+[1.469s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.469s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.470s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.470s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.511s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[1.511s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.511s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.511s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.512s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[1.512s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.513s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/halit/raspberry/install/local_setup.ps1'
+[1.513s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/halit/raspberry/install/_local_setup_util_ps1.py'
+[1.514s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/halit/raspberry/install/setup.ps1'
+[1.515s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/halit/raspberry/install/local_setup.sh'
+[1.515s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/halit/raspberry/install/_local_setup_util_sh.py'
+[1.515s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/halit/raspberry/install/setup.sh'
+[1.516s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/halit/raspberry/install/local_setup.bash'
+[1.517s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/halit/raspberry/install/setup.bash'
+[1.517s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/halit/raspberry/install/local_setup.zsh'
+[1.518s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/halit/raspberry/install/setup.zsh'

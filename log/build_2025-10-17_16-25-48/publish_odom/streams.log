@@ -1,0 +1,17 @@
+[0.984s] Invoking command in '/home/halit/raspberry/build/publish_odom': PYTHONPATH=/home/halit/raspberry/build/publish_odom/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/publish_odom/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/halit/raspberry/build/publish_odom/build --no-deps symlink_data
+[1.269s] running develop
+[1.422s] running egg_info
+[1.437s] writing publish_odom.egg-info/PKG-INFO
+[1.437s] writing dependency_links to publish_odom.egg-info/dependency_links.txt
+[1.437s] writing entry points to publish_odom.egg-info/entry_points.txt
+[1.438s] writing requirements to publish_odom.egg-info/requires.txt
+[1.438s] writing top-level names to publish_odom.egg-info/top_level.txt
+[1.467s] reading manifest file 'publish_odom.egg-info/SOURCES.txt'
+[1.468s] writing manifest file 'publish_odom.egg-info/SOURCES.txt'
+[1.483s] running build_ext
+[1.483s] Creating /home/halit/raspberry/install/publish_odom/lib/python3.12/site-packages/publish-odom.egg-link (link to .)
+[1.484s] Installing get_odometry_from_rasbery script to /home/halit/raspberry/install/publish_odom/lib/publish_odom
+[1.484s] 
+[1.484s] Installed /home/halit/raspberry/build/publish_odom
+[1.484s] running symlink_data
+[1.516s] Invoked command in '/home/halit/raspberry/build/publish_odom' returned '0': PYTHONPATH=/home/halit/raspberry/build/publish_odom/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/raspberry/install/publish_odom/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/halit/raspberry/build/publish_odom/build --no-deps symlink_data

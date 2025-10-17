@@ -1,0 +1,1 @@
+/home/halit/raspberry/build/set_slam/set_slam/launch/slam_launch.py
