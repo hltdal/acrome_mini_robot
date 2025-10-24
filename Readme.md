@@ -1,6 +1,9 @@
 # acrome_mini_robot
 This repository exists both to control acrome mini robot in real_life with hardwares and to be able to slam.
 
+0.1. raspbery ye "https://github.com/Slamtec/sllidar_ros2" bu repo kurulmalı
+0.2. launch klasörü içerisindeki "view_sllidar_a1_launch.py" bu dosyanın içeriğindeki "rviz" satırları kaldırılmalı. (22-25 & 76-81 satırları)
+
 0. raspbery deki get_rpm.py ve get_lidar.py dosyalarındaki ip adreslerini kontrol et
 
 1. Odometry verisini wsl de /odom topic i altında yayınlatma
