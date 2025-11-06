@@ -10,10 +10,25 @@ from set_odometry import DifferentialOdometry  # Import odometry class
 import socket
 import json
 
-UDP_IP = "192.168.1.158"  # Must change
+# --- Hedef IP'yi Otomatik Algılama ---
+ssh_client = os.environ.get('SSH_CLIENT')
+if ssh_client:
+    # ssh_client '192.168.1.158 54321 22' gibi bir string içerir.
+    # Bize sadece ilk kısım (IP adresi) lazım.
+    UDP_IP = ssh_client.split()[0]
+    print(f"PC IP'si SSH üzerinden otomatik algılandı: {UDP_IP}")
+else:
+    UDP_IP = '127.0.0.1'  # Eğer SSH ile bağlı değilse (test vb.)
+    print("UYARI: SSH_CLIENT ortam değişkeni bulunamadı.")
+    print("Fallback olarak localhost (127.0.0.1) kullanılıyor.")
+
 UDP_PORT = 5005
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+# Nereye gönderim yaptığını teyit etmek için bir print ekleyelim
+print(f"UDP paketleri şu hedefe gönderilecek: {UDP_IP}:{UDP_PORT}")
+
 
 # Function to detect and return the correct USB port for communication
 def USB_Port():
