@@ -4,6 +4,3 @@ source;share/set_slam/hook/pythonpath.sh
 source;share/set_slam/hook/ament_prefix_path.ps1
 source;share/set_slam/hook/ament_prefix_path.dsv
 source;share/set_slam/hook/ament_prefix_path.sh
-source;../../build/set_slam/share/set_slam/hook/pythonpath_develop.ps1
-source;../../build/set_slam/share/set_slam/hook/pythonpath_develop.dsv
-source;../../build/set_slam/share/set_slam/hook/pythonpath_develop.sh

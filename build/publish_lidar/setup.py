@@ -1,1 +1,0 @@
-/home/halit/acrome_mini_robot/src/publish_lidar/setup.py

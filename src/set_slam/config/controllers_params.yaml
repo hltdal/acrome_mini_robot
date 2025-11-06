@@ -1,0 +1,37 @@
+# Gazebo simülasyonu için ros2_control kontrolörleri
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # Hz
+
+    # 1. Joint State Broadcaster (Tekerleklerin durumunu /joint_states'e yayınlar)
+    # Bu, RViz'in 'No transform' hatası vermemesi için joint_state_publisher'ın yerini alır.
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # 2. Differential Drive Controller (Robotu sürmek için)
+    # /cmd_vel topiğini dinler ve tekerlek motorlarına komut gönderir.
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+      ros__parameters:
+        # Kontrol edilecek joint'lerin adları (URDF'deki ile aynı olmalı)
+        left_wheel_names: ["left_wheel_joint"]
+        right_wheel_names: ["right_wheel_joint"]
+
+        # Robotun fiziksel parametreleri (Metre cinsinden)
+        # Bu değerleri kendi robotunuza göre ayarlayın
+        wheel_separation: 0.28 # İki tekerlek arasındaki mesafe (URDF'den: 0.14 - (-0.14) = 0.28)
+        wheel_radius: 0.04     # Tekerlek yarıçapı (Bunu kendi modelinize göre ölçün!)
+
+        # Hız komutlarını dinleyeceği topic
+        command_topic: "/cmd_vel"
+
+        # Odometri verisini yayınlayacağı topic
+        odom_topic: "/odom"
+
+        # Odometri çerçeve (frame) ID'leri
+        odom_frame_id: "odom"
+        base_frame_id: "base_link"
+
+        # Simülasyon zamanı
+        use_sim_time: true

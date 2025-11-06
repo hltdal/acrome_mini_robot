@@ -1,4 +1,4 @@
-# sudo -E python3 get_rpm.py
+#sudo -E python3 get_rpm.py
 
 from smd.red import *  # Import the SMD Red motor control library
 from serial.tools.list_ports import comports  # Import serial communication tools
@@ -7,7 +7,13 @@ import os
 import time
 import threading
 from set_odometry import DifferentialOdometry  # Import odometry class
+import socket
+import json
 
+UDP_IP = "192.168.1.158"  # Must change
+UDP_PORT = 5005
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 # Function to detect and return the correct USB port for communication
 def USB_Port():
@@ -42,8 +48,9 @@ def USB_Port():
 
 # --- Motor ayarları ---
 port = USB_Port()
+
+
 m = Master(port)
-print(f"Connected to port: {port}")
 
 ID1 = 0
 ID2 = 1
@@ -52,15 +59,16 @@ m.attach(Red(ID1))
 m.attach(Red(ID2))
 
 m.set_shaft_cpr(ID1, 6533)
+m.set_shaft_rpm(ID1, 100)
 m.set_operation_mode(ID1, OperationMode.Velocity)
 m.set_control_parameters_velocity(ID1, 30.0, 5.0, 0.0)
 m.enable_torque(ID1, True)
 
 m.set_shaft_cpr(ID2, 6533)
+m.set_shaft_rpm(ID2, 100)
 m.set_operation_mode(ID2, OperationMode.Velocity)
 m.set_control_parameters_velocity(ID2, 30.0, 5.0, 0.0)
 m.enable_torque(ID2, True)
-
 
 
 # --- Odometri ---
@@ -73,12 +81,23 @@ def odometry_loop():
         rpm_left = m.get_velocity(ID1)
         rpm_right = m.get_velocity(ID2)
 
-        x, y, theta, v, w = odo.update(rpm_left, rpm_right)
+        x, y, theta, v, w = odo.update(-rpm_left, rpm_right)
 
         print("\n--- ODOMETRY ---")
         print(f"Left RPM: {rpm_left:.2f}, Right RPM: {rpm_right:.2f}")
         print(f"x={x:.3f}, y={y:.3f}, theta={theta:.3f}, v={v:.3f}, w={w:.3f}")
         print("----------------\n")
+
+        # --- UDP ile gönder ---
+        odom_data = {
+            "x": x, "y": y, "theta": theta,
+            "v": v, "w": w,
+            "rpm_left":rpm_left, "rpm_right":rpm_right,
+            "timestamp": time.time()
+        }
+        message = json.dumps(odom_data).encode("utf-8")
+        sock.sendto(message, (UDP_IP, UDP_PORT))
+        print("odom's data is sended")
 
         time.sleep(1)  # 1 saniye aralıklarla güncelle
 
@@ -98,7 +117,7 @@ while True:
         m.set_velocity(ID2, speed2)
 
     except ValueError:
-        print("⚠️ Lütfen geçerli bir sayı girin.")
+        print("pls enter valid number")
     except KeyboardInterrupt:
         print("Çıkılıyor...")
         break

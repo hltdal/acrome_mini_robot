@@ -9,7 +9,7 @@ def generate_launch_description():
     slam_params_file = os.path.join(pkg_share, 'config', 'mapper_params_online_sync.yaml')
 
     return LaunchDescription([
-        # 1️⃣ slam_toolbox online mapper
+        # slam_toolbox online mapper
         Node(
             package='slam_toolbox',
             executable='sync_slam_toolbox_node',  # online_sync veya sync
@@ -18,7 +18,7 @@ def generate_launch_description():
             parameters=[slam_params_file]
         ),
 
-        # 2️⃣ odom->base_link broadcaster
+        # odom->base_link broadcaster
         Node(
             package='set_slam',
             executable='odom_to_tf_broadcaster',
@@ -26,7 +26,7 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # 3️⃣ base_link->laser_frame static transform
+        # base_link->laser_frame static transform
         Node(
             package='tf2_ros',
             executable='static_transform_publisher',
