@@ -10,15 +10,12 @@ from set_odometry import DifferentialOdometry  # Import odometry class
 import socket
 import json
 
-# --- Hedef IP'yi Otomatik Algılama ---
 ssh_client = os.environ.get('SSH_CLIENT')
 if ssh_client:
-    # ssh_client '192.168.1.158 54321 22' gibi bir string içerir.
-    # Bize sadece ilk kısım (IP adresi) lazım.
     UDP_IP = ssh_client.split()[0]
     print(f"PC IP'si SSH üzerinden otomatik algılandı: {UDP_IP}")
 else:
-    UDP_IP = '127.0.0.1'  # Eğer SSH ile bağlı değilse (test vb.)
+    UDP_IP = '127.0.0.1'
     print("UYARI: SSH_CLIENT ortam değişkeni bulunamadı.")
     print("Fallback olarak localhost (127.0.0.1) kullanılıyor.")
 
@@ -26,7 +23,6 @@ UDP_PORT = 5005
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-# Nereye gönderim yaptığını teyit etmek için bir print ekleyelim
 print(f"UDP paketleri şu hedefe gönderilecek: {UDP_IP}:{UDP_PORT}")
 
 
@@ -91,19 +87,13 @@ odo = DifferentialOdometry()
 
 
 def odometry_loop():
-    """Arka planda sürekli odometri verisi yayınlayan thread."""
     while True:
         rpm_left = m.get_velocity(ID1)
-        rpm_right = m.get_velocity(ID2)
+        rpm_right = -(m.get_velocity(ID2))
 
-        x, y, theta, v, w = odo.update(-rpm_left, rpm_right)
+        x, y, theta, v, w = odo.update(rpm_left, rpm_right)
 
-        print("\n--- ODOMETRY ---")
-        print(f"Left RPM: {rpm_left:.2f}, Right RPM: {rpm_right:.2f}")
-        print(f"x={x:.3f}, y={y:.3f}, theta={theta:.3f}, v={v:.3f}, w={w:.3f}")
-        print("----------------\n")
-
-        # --- UDP ile gönder ---
+        # --- send with UDP ---
         odom_data = {
             "x": x, "y": y, "theta": theta,
             "v": v, "w": w,
@@ -114,15 +104,14 @@ def odometry_loop():
         sock.sendto(message, (UDP_IP, UDP_PORT))
         print("odom's data is sended")
 
-        time.sleep(1)  # 1 saniye aralıklarla güncelle
+        time.sleep(1)
 
 
-# Thread başlat
+# Thread
 thread = threading.Thread(target=odometry_loop, daemon=True)
 thread.start()
 
 
-# --- Kullanıcı inputları (main thread) ---
 while True:
     try:
         speed1 = float(input("Motor 1 Speed (RPM): "))

@@ -151,4 +151,29 @@
     * Tune the left/right wheel joint <origin> xyz until the wheels sit correctly in the model.
     * For simulation or control, add transmissions and gazebo_ros2_control plugins separately.
   ================= -->
+    <!-- Gazebo Control Plugin -->
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find set_slam)/config/acrome_controller.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <!-- Yerçekimi ve malzeme özellikleri -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="left_wheel_link">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>100000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="right_wheel_link">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <kp>100000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+
 </robot>
