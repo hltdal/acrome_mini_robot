@@ -20,7 +20,7 @@
       <!-- If the model looks flipped, try rpy="0 0 3.14159" -->
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(arg mesh_path)/base_link.stl" scale="1 1 1"/>
+        <mesh filename="file:///home/halit/acrome_mini_robot/src/set_slam/meshes/base_link.stl" scale="1 1 1"/>
       </geometry>
       <material name="base_grey">
         <color rgba="0.6 0.6 0.6 1.0"/>
@@ -30,7 +30,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(arg mesh_path)/base_link.stl" scale="1 1 1"/>
+        <mesh filename="file:///home/halit/acrome_mini_robot/src/set_slam/meshes/base_link.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -55,7 +55,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(arg mesh_path)/left_wheel.stl" scale="1 1 1"/>
+        <mesh filename="file:///home/halit/acrome_mini_robot/src/set_slam/meshes/left_wheel.stl" scale="1 1 1"/>
       </geometry>
       <material name="wheel_black">
         <color rgba="0.1 0.1 0.1 1.0"/>
@@ -65,7 +65,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(arg mesh_path)/left_wheel.stl" scale="1 1 1"/>
+        <mesh filename="file:///home/halit/acrome_mini_robot/src/set_slam/meshes/left_wheel.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -93,7 +93,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(arg mesh_path)/right_wheel.stl" scale="1 1 1"/>
+        <mesh filename="file:///home/halit/acrome_mini_robot/src/set_slam/meshes/right_wheel.stl" scale="1 1 1"/>
       </geometry>
       <material name="wheel_black"/>
     </visual>
@@ -101,7 +101,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(arg mesh_path)/right_wheel.stl" scale="1 1 1"/>
+        <mesh filename="file:///home/halit/acrome_mini_robot/src/set_slam/meshes/right_wheel.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>

@@ -14,7 +14,7 @@ setup(
         (os.path.join('share', package_name, 'launch'), glob('set_slam/launch/*.py')),
         (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
         (os.path.join('share', package_name, 'urdf'), glob('urdf/*')),
-        (os.path.join('share', package_name, 'meshes'), glob('meshes/*')),
+        (os.path.join('share', package_name, 'meshes'), glob('meshes/*.stl')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

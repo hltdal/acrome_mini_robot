@@ -7,7 +7,6 @@
 /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index/packages/set_slam
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/package.xml
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch/display.launch.py
-/home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch/display_gz_rviz.launch.py
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch/slam_launch.py
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config/controllers_params.yaml
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config/mapper_params_online_sync.yaml

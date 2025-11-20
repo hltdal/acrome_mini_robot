@@ -16,7 +16,6 @@ meshes/right_wheel.stl
 resource/set_slam
 set_slam/__init__.py
 set_slam/launch/display.launch.py
-set_slam/launch/display_gz_rviz.launch.py
 set_slam/launch/slam_launch.py
 set_slam/nodes/__init__.py
 set_slam/nodes/odom_to_tf_broadcaster.py
