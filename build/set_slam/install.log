@@ -6,6 +6,7 @@
 /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes/__pycache__/__init__.cpython-312.pyc
 /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index/packages/set_slam
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/package.xml
+/home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch/teleop.py
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch/display.launch.py
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch/slam_launch.py
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config/controllers_params.yaml
@@ -14,6 +15,7 @@
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes/base_link.stl
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes/left_wheel.stl
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes/right_wheel.stl
+/home/halit/acrome_mini_robot/install/set_slam/share/set_slam/worlds/empty_with_ground.sdf
 /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam-0.0.0-py3.12.egg-info/entry_points.txt
 /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam-0.0.0-py3.12.egg-info/zip-safe
 /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam-0.0.0-py3.12.egg-info/PKG-INFO

@@ -17,7 +17,7 @@ def generate_launch_description():
     pkg_share = get_package_share_directory('set_slam')
     xacro_file = PathJoinSubstitution([FindPackageShare('set_slam'), 'urdf', 'acrome_mini_robot.xacro'])
     slam_params_file = os.path.join(pkg_share, 'config', 'mapper_params_online_sync.yaml')
-
+    world_file_path = os.path.join(pkg_share, 'worlds', 'empty_with_ground.sdf')
     # Xacro'dan URDF üret (Command() ile)
     robot_description_content = Command([
         'xacro ',
@@ -33,6 +33,14 @@ def generate_launch_description():
         executable='joint_state_publisher',
         name='joint_state_publisher',
         parameters=[{'use_sim_time': use_sim_time}]
+    )
+
+    robot_controllers = PathJoinSubstitution(
+        [
+            FindPackageShare('acrome_mini_robot'),
+            'config',
+            'acrome_controller.yaml',
+        ]
     )
 
     # robot_state_publisher node
@@ -53,7 +61,7 @@ def generate_launch_description():
                 'gz_sim.launch.py'
             ])
         ]),
-        launch_arguments={'gz_args': 'empty.sdf'}.items()
+        launch_arguments={'gz_args': ['-r ', world_file_path]}.items()
     )
 
     # Robotu spawn et
@@ -63,9 +71,20 @@ def generate_launch_description():
         arguments=[
             '-name', 'acrome_mini_robot',
             '-topic', 'robot_description',
-            '-x', '0', '-y', '0', '-z', '0.1'  # 2 cm yukarıda spawn
+            '-x', '0', '-y', '0', '-z', '0.05'  # 5 cm yukarıda spawn
         ],
         output='screen'
+    )
+
+    wheel_velocity_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'wheel_velocity_controller',
+            '--param-file',
+            robot_controllers,
+        ],
+        parameters=[{'use_sim_time': use_sim_time}]
     )
 
     # SLAM toolbox (online sync)
@@ -103,6 +122,17 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}],
     )
 
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            # Clock
+            '/world/default/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock]',
+        ],
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
+    )
+
     # Launch description oluştur
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -113,10 +143,12 @@ def generate_launch_description():
 
         gz_sim_launch,
         spawn_robot,
+        bridge,
         joint_state_publisher_node,
         robot_state_publisher_node,
         odom_to_tf_broadcaster_node,
         static_tf_node,
         slam_toolbox_node,
-        rviz_node
+        rviz_node,
+        wheel_velocity_controller_spawner
     ])
