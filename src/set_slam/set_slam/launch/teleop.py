@@ -18,16 +18,49 @@ def get_key():
 
 class TeleopNode(Node):
     def __init__(self):
-        super().__init__('teleop_wasd')
+        super().__init__('teleop_rpm')
         self.publisher = self.create_publisher(Float64MultiArray, '/wheel_velocity_controller/commands', 10)
-        self.speed = 3  # m/s eşdeğeri, robotuna göre ayarla
-        self.get_logger().info("WASD ile kontrol başlatıldı. 'q' ile çık.")
+        
+        # RPM değerleri
+        self.left_rpm = 0.0
+        self.right_rpm = 0.0
 
-    def publish(self, left, right):
+        # Artış miktarları
+        self.linear_step = 10  # her basışta RPM artışı
+        self.angular_step = 10  # dönme artışı
+        self.max_rpm = 100      # maksimum RPM
+        self.min_rpm = -100     # minimum RPM
+
+        self.get_logger().info("Teleop başlatıldı. WASD ile RPM arttır/azalt, q ile çık.")
+
+    def publish(self):
         msg = Float64MultiArray()
-        msg.data = [left, right]
+        msg.data = [self.left_rpm/60, self.right_rpm/60]  # RPM'den RPS'ye dönüştür cuz controller expects RPS
         self.publisher.publish(msg)
-        self.get_logger().info(f"Komut gönderildi: {msg.data}")
+        self.get_logger().info(f"Left RPM: {self.left_rpm:.1f}, Right RPM: {self.right_rpm:.1f}")
+
+    def update_rpm(self, key):
+        if key.lower() == 'w':  # ileri
+            self.left_rpm -= self.linear_step
+            self.right_rpm -= self.linear_step
+        elif key.lower() == 's':  # geri
+            self.left_rpm += self.linear_step
+            self.right_rpm += self.linear_step
+        elif key.lower() == 'a':  # sola dön
+            self.left_rpm += self.angular_step
+            self.right_rpm -= self.angular_step
+        elif key.lower() == 'd':  # sağa dön
+            self.left_rpm -= self.angular_step
+            self.right_rpm += self.angular_step
+        elif key.lower() == 'x':  # fren / durdur
+            self.left_rpm = 0
+            self.right_rpm = 0
+
+        # Limitleri uygula
+        self.left_rpm = max(min(self.left_rpm, self.max_rpm), self.min_rpm)
+        self.right_rpm = max(min(self.right_rpm, self.max_rpm), self.min_rpm)
+
+        self.publish()
 
 def main(args=None):
     rclpy.init(args=args)
@@ -36,16 +69,9 @@ def main(args=None):
     try:
         while rclpy.ok():
             key = get_key()
-            if key.lower() == 'w':  # ileri
-                node.publish(-node.speed, -node.speed)
-            elif key.lower() == 's':  # geri
-                node.publish(node.speed, node.speed)
-            elif key.lower() == 'a':  # sola
-                node.publish(node.speed, -node.speed)
-            elif key.lower() == 'd':  # sağa
-                node.publish(-node.speed, node.speed)
-            elif key.lower() == 'q':  # çıkış
+            if key.lower() == 'q':
                 break
+            node.update_rpm(key)
     except KeyboardInterrupt:
         pass
     finally:
