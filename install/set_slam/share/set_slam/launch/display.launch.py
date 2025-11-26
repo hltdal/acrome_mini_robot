@@ -10,15 +10,15 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
 
-    # Launch argument: sim zamanı kullanılsın mı?
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
 
     # Paket ve dosya yolları
     pkg_share = get_package_share_directory('set_slam')
+    rviz_config_file = os.path.join(pkg_share, 'rviz', 'default.rviz')
     xacro_file = PathJoinSubstitution([FindPackageShare('set_slam'), 'urdf', 'acrome_mini_robot.xacro'])
     slam_params_file = os.path.join(pkg_share, 'config', 'mapper_params_online_sync.yaml')
     world_file_path = os.path.join(pkg_share, 'worlds', 'empty_with_ground.sdf')
-    # Xacro'dan URDF üret (Command() ile)
+
     robot_description_content = Command([
         'xacro ',
         xacro_file,
@@ -87,15 +87,6 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
-    # SLAM toolbox (online sync)
-    slam_toolbox_node = Node(
-        package='slam_toolbox',
-        executable='sync_slam_toolbox_node',
-        name='slam_toolbox',
-        output='screen',
-        parameters=[slam_params_file, {'use_sim_time': use_sim_time}]
-    )
-
     # Odom -> base_link broadcaster
     odom_to_tf_broadcaster_node = Node(
         package='set_slam',
@@ -113,24 +104,23 @@ def generate_launch_description():
         arguments=['0', '0', '0.1', '0', '0', '0', 'base_link', 'laser_frame']
     )
 
-    # RViz node
+    # SLAM Toolbox Node
+    slam_toolbox_node = Node(
+        package='slam_toolbox',
+        executable='sync_slam_toolbox_node',  # online_sync veya sync
+        name='slam_toolbox',
+        output='screen',
+        parameters=[slam_params_file]
+    )
+
+    # RViz node (GÜNCELLENDİ)
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
         name='rviz2',
         output='screen',
         parameters=[{'use_sim_time': use_sim_time}],
-    )
-
-    bridge = Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        arguments=[
-            # Clock
-            '/world/default/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock]',
-        ],
-        output='screen',
-        parameters=[{'use_sim_time': use_sim_time}],
+        arguments=['-d', rviz_config_file]  # Config dosyasını burada yüklüyoruz
     )
 
     # Launch description oluştur
@@ -140,15 +130,13 @@ def generate_launch_description():
             default_value='false',
             description='Use simulation (Gazebo) clock if true'),
         
-
         gz_sim_launch,
         spawn_robot,
-        bridge,
         joint_state_publisher_node,
         robot_state_publisher_node,
         odom_to_tf_broadcaster_node,
         static_tf_node,
-        slam_toolbox_node,
-        rviz_node,
-        wheel_velocity_controller_spawner
+        slam_toolbox_node, 
+        wheel_velocity_controller_spawner,
+        rviz_node
     ])

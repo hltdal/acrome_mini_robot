@@ -16,6 +16,7 @@ setup(
         (os.path.join('share', package_name, 'urdf'), glob('urdf/*')),
         (os.path.join('share', package_name, 'meshes'), glob('meshes/*.stl')),
         (os.path.join('share', package_name, 'worlds'), glob('worlds/*.sdf')),
+        (os.path.join('share', package_name, 'rviz'), glob('rviz/*.rviz')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

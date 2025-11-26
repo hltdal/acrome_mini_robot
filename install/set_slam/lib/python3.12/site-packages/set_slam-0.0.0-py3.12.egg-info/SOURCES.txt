@@ -14,6 +14,7 @@ meshes/base_link.stl
 meshes/left_wheel.stl
 meshes/right_wheel.stl
 resource/set_slam
+rviz/default.rviz
 set_slam/__init__.py
 set_slam/launch/display.launch.py
 set_slam/launch/slam_launch.py

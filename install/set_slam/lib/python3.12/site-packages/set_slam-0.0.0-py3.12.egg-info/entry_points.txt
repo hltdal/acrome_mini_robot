@@ -1,2 +1,3 @@
 [console_scripts]
 odom_to_tf_broadcaster = set_slam.nodes.odom_to_tf_broadcaster:main
+odometry_publisher = set_slam.nodes.odometry_publisher:main

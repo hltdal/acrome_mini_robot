@@ -1,0 +1,5 @@
+[0.000000] (-) TimerEvent: {}
+[0.000206] (-) JobUnselected: {'identifier': 'publish_lidar'}
+[0.000362] (-) JobUnselected: {'identifier': 'publish_odom'}
+[0.000389] (-) JobUnselected: {'identifier': 'set_slam'}
+[0.000757] (-) EventReactorShutdown: {}
