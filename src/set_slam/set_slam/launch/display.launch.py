@@ -10,7 +10,8 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
 
-    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+    # DEĞİŞİKLİK 1: Simülasyon olduğu için default='true' yaptık
+    use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
     # Paket ve dosya yolları
     pkg_share = get_package_share_directory('set_slam')
@@ -76,6 +77,15 @@ def generate_launch_description():
         output='screen'
     )
 
+    # DEĞİŞİKLİK 2: Bridge Node Eklendi (Clock için kritik)
+    # Gazebo'daki clock sinyalini ROS2'ye aktarır.
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        output='screen'
+    )
+
     wheel_velocity_controller_spawner = Node(
         package='controller_manager',
         executable='spawner',
@@ -92,7 +102,8 @@ def generate_launch_description():
         package='set_slam',
         executable='odom_to_tf_broadcaster',
         name='odom_to_tf_broadcaster',
-        output='screen'
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}] # Buraya da parametre eklemek iyidir
     )
 
     # base_link -> laser_frame static transform publisher
@@ -101,36 +112,38 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='static_tf_base_to_laser',
         output='screen',
-        arguments=['0', '0', '0.1', '0', '0', '0', 'base_link', 'laser_frame']
+        arguments=['0', '0', '0.1', '0', '0', '0', 'base_link', 'laser_frame'],
+        parameters=[{'use_sim_time': use_sim_time}]
     )
 
     # SLAM Toolbox Node
     slam_toolbox_node = Node(
         package='slam_toolbox',
-        executable='sync_slam_toolbox_node',  # online_sync veya sync
+        executable='sync_slam_toolbox_node',
         name='slam_toolbox',
         output='screen',
-        parameters=[slam_params_file]
+        parameters=[slam_params_file, {'use_sim_time': use_sim_time}]
     )
 
-    # RViz node (GÜNCELLENDİ)
+    # RViz node
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
         name='rviz2',
         output='screen',
         parameters=[{'use_sim_time': use_sim_time}],
-        arguments=['-d', rviz_config_file]  # Config dosyasını burada yüklüyoruz
+        arguments=['-d', rviz_config_file]
     )
 
     # Launch description oluştur
     return LaunchDescription([
         DeclareLaunchArgument(
             'use_sim_time',
-            default_value='false',
+            default_value='true', # Default true yaptık
             description='Use simulation (Gazebo) clock if true'),
         
         gz_sim_launch,
+        bridge, # Bridge'i buraya ekledik
         spawn_robot,
         joint_state_publisher_node,
         robot_state_publisher_node,
