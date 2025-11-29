@@ -16,7 +16,7 @@ def generate_launch_description():
 
     # Dosya Yolları
     pkg_share = get_package_share_directory('set_slam')
-    rviz_config_file = os.path.join(pkg_share, 'rviz', 'default.rviz')
+    rviz_config_file = os.path.join(pkg_share, 'rviz', 'fixed.rviz')
     xacro_file = PathJoinSubstitution([FindPackageShare('set_slam'), 'urdf', 'acrome_mini_robot.xacro'])
     ekf_config_path = PathJoinSubstitution([FindPackageShare('set_slam'), 'config', 'ekf.yaml'])
     slam_params_file = os.path.join(pkg_share, 'config', 'mapper_params_online_sync.yaml')
