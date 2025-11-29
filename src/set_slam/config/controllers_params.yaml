@@ -1,21 +1,41 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100  # Hz
+    update_rate: 50 # 100 Hz bazen fazla gelebilir, 50 idealdir
+    use_sim_time: true # Simülasyon saati kullanması için şart!
+
+    wheel_velocity_controller:
+      type: diff_drive_controller/DiffDriveController
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    wheel_velocity_controller:
-      type: velocity_controllers/JointGroupVelocityController
-
 wheel_velocity_controller:
   ros__parameters:
-    joints:
-      - base_to_wheel_2
-      - base_to_wheel_3
-    interface_name: velocity
-    command_interfaces:
-      - velocity
-    state_interfaces:
-      - position
-      - velocity
+    use_sim_time: true
+    
+    # Tekerlek İsimleri (URDF ile aynı olmalı)
+    left_wheel_names: ["base_to_wheel_2"]
+    right_wheel_names: ["base_to_wheel_3"]
+
+    # URDF'den hesaplanan fiziksel ölçüler
+    wheel_separation: 0.258  # 0.129 + 0.129
+    wheel_radius: 0.036      # radius="0.036"
+
+    # Odometri Ayarları
+    wheel_separation_multiplier: 1.0
+    left_wheel_radius_multiplier: 1.0
+    right_wheel_radius_multiplier: 1.0
+
+    # TF Yayını (EKF yapacağı için bunu KAPATIYORUZ)
+    enable_odom_tf: false
+    
+    # Odometriyi yayınlasın ama TF basmasın
+    publish_rate: 50.0
+    odom_frame_id: odom
+    base_frame_id: base_link
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+
+    # Hız limitleri (İsteğe bağlı)
+    open_loop: true
+    enable_stamped_vel: false

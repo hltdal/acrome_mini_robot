@@ -77,12 +77,13 @@ class TeleopNode(Node):
     def __init__(self):
         super().__init__('teleop_rpm_with_odom')
         
+        param = rclpy.parameter.Parameter('use_sim_time', rclpy.Parameter.Type.BOOL, True)
+        self.set_parameters([param])
+        
         # Publisherlar
         self.vel_publisher = self.create_publisher(Float64MultiArray, '/wheel_velocity_controller/commands', 10)
         self.odom_publisher = self.create_publisher(Odometry, '/odom', 10)
         
-        # TF Broadcaster (SLAM ve RViz için ZORUNLU)
-        self.tf_broadcaster = TransformBroadcaster(self)
         
         self.odom_calculator = DifferentialOdometry()
 
@@ -141,25 +142,21 @@ class TeleopNode(Node):
         odom_msg.pose.pose.position.z = 0.0
         odom_msg.pose.pose.orientation = q
 
+        odom_msg.pose.covariance = [
+            0.01, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.01, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.01, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.01, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.01, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.01
+        ]
+
         # Hız
         odom_msg.twist.twist.linear.x = v
         odom_msg.twist.twist.angular.z = w
 
         self.odom_publisher.publish(odom_msg)
 
-        # --- B) TF Yayını (odom -> base_link) ---
-        # SLAM Toolbox ve RViz'in robotun hareket ettiğini görselleştirmesi için bu şarttır.
-        t = TransformStamped()
-        t.header.stamp = current_header_stamp
-        t.header.frame_id = "odom"
-        t.child_frame_id = "base_link"
-
-        t.transform.translation.x = x
-        t.transform.translation.y = y
-        t.transform.translation.z = 0.0
-        t.transform.rotation = q
-
-        self.tf_broadcaster.sendTransform(t)
 
     def update_rpm(self, key):
         if key.lower() == 'w':

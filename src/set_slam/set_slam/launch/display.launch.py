@@ -2,7 +2,8 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
+from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, Command, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
@@ -10,41 +11,25 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
 
-    # DEĞİŞİKLİK 1: Simülasyon olduğu için default='true' yaptık
+    # Argümanlar
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
-    # Paket ve dosya yolları
+    # Dosya Yolları
     pkg_share = get_package_share_directory('set_slam')
     rviz_config_file = os.path.join(pkg_share, 'rviz', 'default.rviz')
     xacro_file = PathJoinSubstitution([FindPackageShare('set_slam'), 'urdf', 'acrome_mini_robot.xacro'])
+    ekf_config_path = PathJoinSubstitution([FindPackageShare('set_slam'), 'config', 'ekf.yaml'])
     slam_params_file = os.path.join(pkg_share, 'config', 'mapper_params_online_sync.yaml')
     world_file_path = os.path.join(pkg_share, 'worlds', 'empty_with_ground.sdf')
 
+    # Robot Description
     robot_description_content = Command([
-        'xacro ',
-        xacro_file,
-        ' ',
+        'xacro ', xacro_file, ' ',
         'mesh_path:=', os.path.join(pkg_share, 'meshes')
     ])
     robot_description = {'robot_description': ParameterValue(robot_description_content, value_type=str)}
 
-    # joint_state_publisher node
-    joint_state_publisher_node = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        parameters=[{'use_sim_time': use_sim_time}]
-    )
-
-    robot_controllers = PathJoinSubstitution(
-        [
-            FindPackageShare('acrome_mini_robot'),
-            'config',
-            'acrome_controller.yaml',
-        ]
-    )
-
-    # robot_state_publisher node
+    # 1. Robot State Publisher (TF Omurgası)
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -53,70 +38,93 @@ def generate_launch_description():
         parameters=[robot_description, {'use_sim_time': use_sim_time}]
     )
 
-    # Gazebo Harmonic (ros_gz_sim) başlat
+    # 2. Joint State Publisher
+    joint_state_publisher_node = Node(
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        name='joint_state_publisher',
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
+
+    # 3. Gazebo Simulation
     gz_sim_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([
-                FindPackageShare('ros_gz_sim'),
-                'launch',
-                'gz_sim.launch.py'
+                FindPackageShare('ros_gz_sim'), 'launch', 'gz_sim.launch.py'
             ])
         ]),
         launch_arguments={'gz_args': ['-r ', world_file_path]}.items()
     )
 
-    # Robotu spawn et
+    # 4. Spawn Robot
     spawn_robot = Node(
         package='ros_gz_sim',
         executable='create',
         arguments=[
             '-name', 'acrome_mini_robot',
             '-topic', 'robot_description',
-            '-x', '0', '-y', '0', '-z', '0.05'  # 5 cm yukarıda spawn
+            '-x', '0', '-y', '0', '-z', '0.05'
         ],
         output='screen'
     )
 
-    # DEĞİŞİKLİK 2: Bridge Node Eklendi (Clock için kritik)
-    # Gazebo'daki clock sinyalini ROS2'ye aktarır.
+    # 5. Bridge Node (Lidar, IMU, Clock)
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
+        arguments=[
+            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+            '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
+            '/imu@sensor_msgs/msg/Imu[gz.msgs.IMU'
+        ],
         output='screen'
     )
 
+    # 6. Controllers
+    robot_controllers = PathJoinSubstitution([
+        FindPackageShare('acrome_mini_robot'), 'config', 'acrome_controller.yaml',
+    ])
+
     wheel_velocity_controller_spawner = Node(
-        package='controller_manager',
-        executable='spawner',
-        arguments=[
-            'wheel_velocity_controller',
-            '--param-file',
-            robot_controllers,
-        ],
+        package='controller_manager', executable='spawner',
+        arguments=['wheel_velocity_controller', '--param-file', robot_controllers],
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
-    # Odom -> base_link broadcaster
-    odom_to_tf_broadcaster_node = Node(
-        package='set_slam',
-        executable='odom_to_tf_broadcaster',
-        name='odom_to_tf_broadcaster',
-        output='screen',
-        parameters=[{'use_sim_time': use_sim_time}] # Buraya da parametre eklemek iyidir
-    )
-
-    # base_link -> laser_frame static transform publisher
-    static_tf_node = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_tf_base_to_laser',
-        output='screen',
-        arguments=['0', '0', '0.1', '0', '0', '0', 'base_link', 'laser_frame'],
+    joint_broad_spawner = Node(
+        package='controller_manager', executable='spawner',
+        arguments=['joint_state_broadcaster'],
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
-    # SLAM Toolbox Node
+    # 7. RF2O Laser Odometry (Lidar'dan odom üretir)
+    rf2o_node = Node(
+        package='rf2o_laser_odometry',
+        executable='rf2o_laser_odometry_node',
+        name='rf2o_laser_odometry',
+        output='screen',
+        parameters=[{
+            'laser_scan_topic': '/scan',
+            'odom_topic': '/lidar_odom',
+            'publish_tf': False,    # TF'i EKF basacak
+            'base_frame_id': 'base_link',
+            'odom_frame_id': 'odom',
+            'init_pose_from_topic': '',
+            'freq': 10.0,
+            'use_sim_time': use_sim_time
+        }]
+    )
+
+    # 8. EKF (Robot Localization) -> TF (odom->base_link) bu basacak
+    ekf_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[ekf_config_path, {'use_sim_time': use_sim_time}]
+    )
+
+    # 9. SLAM Toolbox -> TF (map->odom) bu basacak
     slam_toolbox_node = Node(
         package='slam_toolbox',
         executable='sync_slam_toolbox_node',
@@ -125,7 +133,7 @@ def generate_launch_description():
         parameters=[slam_params_file, {'use_sim_time': use_sim_time}]
     )
 
-    # RViz node
+    # 10. RViz
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -135,21 +143,25 @@ def generate_launch_description():
         arguments=['-d', rviz_config_file]
     )
 
-    # Launch description oluştur
     return LaunchDescription([
-        DeclareLaunchArgument(
-            'use_sim_time',
-            default_value='true', # Default true yaptık
-            description='Use simulation (Gazebo) clock if true'),
+        DeclareLaunchArgument('use_sim_time', default_value='true', description='Use simulation clock'),
         
         gz_sim_launch,
-        bridge, # Bridge'i buraya ekledik
+        bridge,
         spawn_robot,
-        joint_state_publisher_node,
         robot_state_publisher_node,
-        odom_to_tf_broadcaster_node,
-        static_tf_node,
-        slam_toolbox_node, 
-        wheel_velocity_controller_spawner,
+        joint_state_publisher_node,
+
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=spawn_robot,
+                on_exit=[wheel_velocity_controller_spawner, joint_broad_spawner],
+            )
+        ),
+
+        # Çalışma Sırası: Sensör Verisi -> Lidar Odom -> EKF -> SLAM
+        rf2o_node,
+        ekf_node,
+        slam_toolbox_node,
         rviz_node
     ])

@@ -11,6 +11,7 @@
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch/slam_launch.py
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config/controllers_params.yaml
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config/mapper_params_online_sync.yaml
+/home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config/ekf.yaml
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/urdf/acrome_mini_robot.xacro
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes/base_link.stl
 /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes/left_wheel.stl

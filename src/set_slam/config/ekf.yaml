@@ -1,0 +1,56 @@
+### ekf.yaml ###
+ekf_filter_node:
+  ros__parameters:
+    use_sim_time: true
+    frequency: 30.0
+    sensor_timeout: 0.1
+    two_d_mode: true
+    publish_tf: true
+    
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+
+    # --------------------------------------
+    # SENSÖR 1: WHEEL ODOMETRY (Senin Python Kodun)
+    # --------------------------------------
+    odom0: /odom
+    # Sadece HIZ verilerini (Vx, Vyaw) alıyoruz. Pozisyonu EKF hesaplasın.
+    odom0_config: [false, false, false,
+                   false, false, false,
+                   true,  false, false,   # VX (Çizgisel Hız)
+                   false, false, true,    # VYaw (Dönüş Hızı)
+                   false, false, false]
+    odom0_differential: false
+    odom0_queue_size: 10
+
+    # --------------------------------------
+    # SENSÖR 2: LIDAR ODOMETRY (rf2o)
+    # --------------------------------------
+    odom1: /lidar_odom
+    # Lidar'dan KONUM (X, Y) ve AÇI (Yaw) alıyoruz. Harita için bu daha iyi.
+    odom1_config: [true,  true,  false,   # X, Y
+                   false, false, true,    # Yaw
+                   false, false, false,
+                   false, false, false,
+                   false, false, false]
+    odom1_differential: false # Pose kullandığımız için false
+    odom1_queue_size: 10
+
+    # --------------------------------------
+    # SENSÖR 3: IMU (Gazebo)
+    # --------------------------------------
+    imu0: /imu
+    # IMU'nun Oryantasyon (Yaw) verisi 0 kovaryanslı olduğu için kullanmıyoruz.
+    # Sadece Açısal Hız (Gyro Z) kullanıyoruz. Bu çok daha temizdir.
+    imu0_config: [false, false, false,
+                  false, false, false,
+                  false, false, false,
+                  false, false, true,    # VYaw (Gyro Z)
+                  false, false, false]
+    imu0_differential: false
+    imu0_queue_size: 10
+    
+    # Sıfır kovaryans hatasını yutması için:
+    dynamic_process_noise_covariance: true

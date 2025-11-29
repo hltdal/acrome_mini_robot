@@ -9,6 +9,7 @@ setup.py
 ../../build/set_slam/set_slam.egg-info/top_level.txt
 ../../build/set_slam/set_slam.egg-info/zip-safe
 config/controllers_params.yaml
+config/ekf.yaml
 config/mapper_params_online_sync.yaml
 meshes/base_link.stl
 meshes/left_wheel.stl
