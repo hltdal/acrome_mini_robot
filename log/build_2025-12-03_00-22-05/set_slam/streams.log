@@ -1,0 +1,23 @@
+[1.284s] Invoking command in '/home/halit/acrome_mini_robot/src/set_slam': PYTHONPATH=/home/halit/acrome_mini_robot/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/set_slam build --build-base /home/halit/acrome_mini_robot/build/set_slam/build install --record /home/halit/acrome_mini_robot/build/set_slam/install.log --single-version-externally-managed install_data
+[1.496s] running egg_info
+[1.514s] writing ../../build/set_slam/set_slam.egg-info/PKG-INFO
+[1.514s] writing dependency_links to ../../build/set_slam/set_slam.egg-info/dependency_links.txt
+[1.514s] writing entry points to ../../build/set_slam/set_slam.egg-info/entry_points.txt
+[1.515s] writing requirements to ../../build/set_slam/set_slam.egg-info/requires.txt
+[1.515s] writing top-level names to ../../build/set_slam/set_slam.egg-info/top_level.txt
+[1.543s] reading manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'
+[1.544s] writing manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'
+[1.544s] running build
+[1.544s] running build_py
+[1.545s] running install
+[1.551s] running install_lib
+[1.565s] running install_data
+[1.565s] copying set_slam/launch/teleop.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch
+[1.567s] copying worlds/empty_with_ground.sdf -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/worlds
+[1.568s] running install_egg_info
+[1.582s] removing '/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam-0.0.0-py3.12.egg-info' (and everything under it)
+[1.583s] Copying ../../build/set_slam/set_slam.egg-info to /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam-0.0.0-py3.12.egg-info
+[1.584s] running install_scripts
+[1.682s] Installing odom_to_tf_broadcaster script to /home/halit/acrome_mini_robot/install/set_slam/lib/set_slam
+[1.682s] writing list of installed files to '/home/halit/acrome_mini_robot/build/set_slam/install.log'
+[1.703s] Invoked command in '/home/halit/acrome_mini_robot/src/set_slam' returned '0': PYTHONPATH=/home/halit/acrome_mini_robot/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/set_slam build --build-base /home/halit/acrome_mini_robot/build/set_slam/build install --record /home/halit/acrome_mini_robot/build/set_slam/install.log --single-version-externally-managed install_data
