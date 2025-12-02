@@ -68,13 +68,12 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 5. Bridge Node (Lidar, IMU, Clock)
+    # 5. Bridge Node (IMU, Clock)
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=[
             '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-            '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
             '/imu@sensor_msgs/msg/Imu[gz.msgs.IMU'
         ],
         output='screen'
@@ -95,6 +94,24 @@ def generate_launch_description():
         package='controller_manager', executable='spawner',
         arguments=['joint_state_broadcaster'],
         parameters=[{'use_sim_time': use_sim_time}]
+    )
+
+    # Gazebo yerine veriyi bu Node basacak.
+    real_lidar_node = Node(
+        package='publish_lidar',
+        executable='get_scan_from_raspbery',
+        name='lidar_tcp_server',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}] 
+    )
+
+    # STATIC TF (lidar_link -> laser_frame)
+    static_tf_lidar_correction = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='static_tf_lidar_correction',
+        arguments=['0','0','0','0','0','0', 'lidar_link', 'laser_frame'],
+        output='screen'
     )
 
     # 7. RF2O Laser Odometry (Lidar'dan odom üretir)
@@ -151,6 +168,8 @@ def generate_launch_description():
         spawn_robot,
         robot_state_publisher_node,
         joint_state_publisher_node,
+        real_lidar_node,
+        static_tf_lidar_correction,
 
         RegisterEventHandler(
             event_handler=OnProcessExit(
