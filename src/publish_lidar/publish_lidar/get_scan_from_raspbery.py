@@ -23,8 +23,8 @@ class LidarTCPServer(Node):
         super().__init__('lidar_tcp_server')
 
         # LaserScan publisher
-        self.publisher_ = self.create_publisher(LaserScan, '/scan', 10)
-        self.get_logger().info("'/scan' topic'i icin publisher olusturuldu.")
+        self.publisher_ = self.create_publisher(LaserScan, '/scan_raw', 10)
+        self.get_logger().info("'/scan_raw' topic'i icin publisher olusturuldu.")
 
         # TCP sunucu mantigini ayri bir thread'de baslatarak ROS2'nin kilitlenmesini onle
         self.server_thread = threading.Thread(target=self.tcp_server_thread)

@@ -1,5 +1,7 @@
+/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/publish_synchronous.py
 /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/get_scan_from_raspbery.py
 /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/__init__.py
+/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/__pycache__/publish_synchronous.cpython-312.pyc
 /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/__pycache__/get_scan_from_raspbery.cpython-312.pyc
 /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/__pycache__/__init__.cpython-312.pyc
 /home/halit/acrome_mini_robot/install/publish_lidar/share/ament_index/resource_index/packages/publish_lidar
@@ -12,3 +14,4 @@
 /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar-0.0.0-py3.12.egg-info/dependency_links.txt
 /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar-0.0.0-py3.12.egg-info/SOURCES.txt
 /home/halit/acrome_mini_robot/install/publish_lidar/lib/publish_lidar/get_scan_from_raspbery
+/home/halit/acrome_mini_robot/install/publish_lidar/lib/publish_lidar/publish_synchronous

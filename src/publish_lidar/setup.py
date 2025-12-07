@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'get_scan_from_raspbery = publish_lidar.get_scan_from_raspbery:main',
+            'publish_synchronous = publish_lidar.publish_synchronous:main',
         ],
     },
 )

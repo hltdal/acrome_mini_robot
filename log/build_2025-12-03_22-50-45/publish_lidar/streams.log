@@ -1,0 +1,24 @@
+[1.425s] Invoking command in '/home/halit/acrome_mini_robot/src/publish_lidar': PYTHONPATH=/home/halit/acrome_mini_robot/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/publish_lidar build --build-base /home/halit/acrome_mini_robot/build/publish_lidar/build install --record /home/halit/acrome_mini_robot/build/publish_lidar/install.log --single-version-externally-managed install_data
+[1.727s] running egg_info
+[1.750s] writing ../../build/publish_lidar/publish_lidar.egg-info/PKG-INFO
+[1.751s] writing dependency_links to ../../build/publish_lidar/publish_lidar.egg-info/dependency_links.txt
+[1.751s] writing entry points to ../../build/publish_lidar/publish_lidar.egg-info/entry_points.txt
+[1.751s] writing requirements to ../../build/publish_lidar/publish_lidar.egg-info/requires.txt
+[1.751s] writing top-level names to ../../build/publish_lidar/publish_lidar.egg-info/top_level.txt
+[1.793s] reading manifest file '../../build/publish_lidar/publish_lidar.egg-info/SOURCES.txt'
+[1.794s] writing manifest file '../../build/publish_lidar/publish_lidar.egg-info/SOURCES.txt'
+[1.794s] running build
+[1.794s] running build_py
+[1.794s] copying publish_lidar/get_scan_from_raspbery.py -> /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar
+[1.795s] running install
+[1.802s] running install_lib
+[1.824s] copying /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar/get_scan_from_raspbery.py -> /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar
+[1.825s] byte-compiling /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/get_scan_from_raspbery.py to get_scan_from_raspbery.cpython-312.pyc
+[1.828s] running install_data
+[1.828s] running install_egg_info
+[1.851s] removing '/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar-0.0.0-py3.12.egg-info' (and everything under it)
+[1.853s] Copying ../../build/publish_lidar/publish_lidar.egg-info to /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar-0.0.0-py3.12.egg-info
+[1.853s] running install_scripts
+[2.003s] Installing get_scan_from_raspbery script to /home/halit/acrome_mini_robot/install/publish_lidar/lib/publish_lidar
+[2.003s] writing list of installed files to '/home/halit/acrome_mini_robot/build/publish_lidar/install.log'
+[2.039s] Invoked command in '/home/halit/acrome_mini_robot/src/publish_lidar' returned '0': PYTHONPATH=/home/halit/acrome_mini_robot/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/publish_lidar build --build-base /home/halit/acrome_mini_robot/build/publish_lidar/build install --record /home/halit/acrome_mini_robot/build/publish_lidar/install.log --single-version-externally-managed install_data

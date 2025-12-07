@@ -24,7 +24,7 @@ This repository exists both to control acrome mini robot in real_life with hardw
 
 2. Lidar verisini wsl de /scan topic i altında yayınlatma
 
-    2.1. wsl de -> cd acrome_mini_robot && ros2 run publish_lidar get_scan_from_raspbery
+    2.1. wsl de -> cd ~/acrome_mini_robot && ros2 run publish_lidar get_scan_from_raspbery
 
     2.2. windowsta -> lidar_tools.py adlı dosya başlatılacak
 
