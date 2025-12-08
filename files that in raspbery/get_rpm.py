@@ -1,127 +1,110 @@
-#sudo -E python3 get_rpm.py
+# sudo -E python3 get_rpm.py
 
-from smd.red import *  # Import the SMD Red motor control library
-from serial.tools.list_ports import comports  # Import serial communication tools
-from platform import system  # Import system information module
-import os
-import time
-import threading
-from set_odometry import DifferentialOdometry  # Import odometry class
+from smd.red import * # Motor kütüphanesi
+from serial.tools.list_ports import comports
+from platform import system
 import socket
 import json
+import os
 
-ssh_client = os.environ.get('SSH_CLIENT')
-if ssh_client:
-    UDP_IP = ssh_client.split()[0]
-    print(f"PC IP'si SSH üzerinden otomatik algılandı: {UDP_IP}")
-else:
-    UDP_IP = '127.0.0.1'
-    print("UYARI: SSH_CLIENT ortam değişkeni bulunamadı.")
-    print("Fallback olarak localhost (127.0.0.1) kullanılıyor.")
+# --- AĞ AYARLARI (Sadece Dinleme) ---
+LISTEN_IP = "0.0.0.0"  # Tüm ağ arayüzlerinden dinle
+LISTEN_PORT = 5005     # Windows'un gönderdiği port
 
-UDP_PORT = 5005
-
+# --- SOKET KURULUMU ---
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.bind((LISTEN_IP, LISTEN_PORT))
+sock.setblocking(True) # Veri gelene kadar bekle
 
-print(f"UDP paketleri şu hedefe gönderilecek: {UDP_IP}:{UDP_PORT}")
+print(f"UDP Sunucusu Başlatıldı.")
+print(f"DİNLİYOR: {LISTEN_IP}:{LISTEN_PORT}")
+print("Görevi: Sadece gelen motor komutlarını uygular.")
 
-
-# Function to detect and return the correct USB port for communication
+# --- USB PORT TESPİTİ ---
 def USB_Port():
     ports = list(comports())
     usb_names = {
         "Windows": ["USB Serial Port"],
         "Linux": ["/dev/ttyUSB"],
-        "Darwin": [
-            "/dev/tty.usbserial",
-            "/dev/tty.usbmodem",
-            "/dev/tty.SLAB_USBtoUART",
-            "/dev/tty.wchusbserial",
-            "/dev/cu.usbserial",
-            "/dev/cu.usbmodem",
-            "/dev/cu.SLAB_USBtoUART",
-            "/dev/cu.wchusbserial",
-        ]
+        "Darwin": ["/dev/tty.usbserial"]
     }
-
     os_name = system()
     if ports:
         for port, desc, hwid in sorted(ports):
             if any(name in port or name in desc for name in usb_names.get(os_name, [])):
                 return port
-        print("Current ports:")
-        for port, desc, hwid in ports:
-            print(f"Port: {port}, Description: {desc}, Hardware ID: {hwid}")
-    else:
-        print("No port found")
     return None
 
-
-# --- Motor ayarları ---
+# --- MOTOR SÜRÜCÜ AYARLARI ---
 port = USB_Port()
-
+if port is None:
+    print("HATA: Motor sürücü USB portu bulunamadı! Bağlantıyı kontrol edin.")
+    exit(1)
 
 m = Master(port)
 
-ID1 = 0
-ID2 = 1
+ID1 = 0 # Sol Motor
+ID2 = 1 # Sağ Motor
 
+# Motorları sisteme tanıt
 m.attach(Red(ID1))
 m.attach(Red(ID2))
 
+# Motor Parametreleri (Senin verdiğin değerler)
+# Motor 1
 m.set_shaft_cpr(ID1, 6533)
 m.set_shaft_rpm(ID1, 100)
 m.set_operation_mode(ID1, OperationMode.Velocity)
 m.set_control_parameters_velocity(ID1, 30.0, 5.0, 0.0)
 m.enable_torque(ID1, True)
 
+# Motor 2
 m.set_shaft_cpr(ID2, 6533)
 m.set_shaft_rpm(ID2, 100)
 m.set_operation_mode(ID2, OperationMode.Velocity)
 m.set_control_parameters_velocity(ID2, 30.0, 5.0, 0.0)
 m.enable_torque(ID2, True)
 
+print("Motorlar aktif ve tork açık. Veri bekleniyor...")
 
-# --- Odometri ---
-odo = DifferentialOdometry()
-
-
-def odometry_loop():
+# --- ANA DÖNGÜ ---
+try:
     while True:
-        rpm_left = m.get_velocity(ID1)
-        rpm_right = -(m.get_velocity(ID2))
+        # 1. Veri Bekle (Bloklayıcı)
+        data, addr = sock.recvfrom(1024)
+        
+        if not data:
+            continue
 
-        x, y, theta, v, w = odo.update(rpm_left, rpm_right)
+        try:
+            # 2. Gelen Veriyi Çöz (JSON Parsing)
+            decoded_data = data.decode('utf-8').strip()
+            command = json.loads(decoded_data)
+            
+            # Beklenen format: {"L": 50, "R": 50}
+            if "L" in command and "R" in command:
+                target_l = float(command["L"])
+                target_r = float(command["R"])
+                
+                # 3. Motorlara Hızı Uygula
+                m.set_velocity(ID1, target_l)
+                m.set_velocity(ID2, target_r)
+                
+                # Debug (İstersen açabilirsin, çok hızlı veri gelirse terminali doldurur)
+                # print(f"Hız Ayarlandı -> L: {target_l}, R: {target_r}")
+                
+            else:
+                print(f"Eksik Veri: {command}")
 
-        # --- send with UDP ---
-        odom_data = {
-            "x": x, "y": y, "theta": theta,
-            "v": v, "w": w,
-            "rpm_left":rpm_left, "rpm_right":rpm_right,
-            "timestamp": time.time()
-        }
-        message = json.dumps(odom_data).encode("utf-8")
-        sock.sendto(message, (UDP_IP, UDP_PORT))
-        print("odom's data is sended")
+        except json.JSONDecodeError:
+            print(f"Hatalı JSON Paketi: {decoded_data}")
+        except Exception as e:
+            print(f"Motor Hatası: {e}")
 
-        time.sleep(1)
-
-
-# Thread
-thread = threading.Thread(target=odometry_loop, daemon=True)
-thread.start()
-
-
-while True:
-    try:
-        speed1 = float(input("Motor 1 Speed (RPM): "))
-        m.set_velocity(ID1, speed1)
-
-        speed2 = float(input("Motor 2 Speed (RPM): "))
-        m.set_velocity(ID2, speed2)
-
-    except ValueError:
-        print("pls enter valid number")
-    except KeyboardInterrupt:
-        print("Çıkılıyor...")
-        break
+except KeyboardInterrupt:
+    print("\nProgram durduruluyor...")
+    # Güvenli çıkış için motorları durdur
+    m.set_velocity(ID1, 0)
+    m.set_velocity(ID2, 0)
+    sock.close()
+    print("Motorlar durduruldu, soket kapatıldı.")

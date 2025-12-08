@@ -9,6 +9,7 @@ ros2 launch set_slam display.launch.py
 2. Lidar verisini wsl de /scan topic i altında yayınlatma
 
     2.1. wsl de -> cd ~/acrome_mini_robot && ros2 run publish_lidar get_scan_from_raspbery
+    (sudo fuser -k 5007/tcp) bu kod gerekebilir
 
     2.2. windowsta -> lidar_tools.py adlı dosya başlatılacak
 
@@ -18,8 +19,13 @@ ros2 launch set_slam display.launch.py
 
     2.5. wsl de -> cd ~/acrome_mini_robot && ros2 run publish_lidar publish_synchronous
 
-3. Terminal
-python3 /home/halit/acrome_mini_robot/src/set_slam/set_slam/launch/teleop.py
+3. Odometry verisini wsl de /odom topic i altında yayınlatma
+
+    1.1. wsl de -> python3 /home/halit/acrome_mini_robot/src/set_slam/set_slam/launch/teleop.py
+
+    1.2. windowsta -> odometry_tools.py adlı dosya çalıştırılacak
+
+    1.3. raspbery de -> cd set_slam_ws && sudo -E python3 get_rpm.py
 
 4. Terminal
 ros2 lifecycle set /slam_toolbox configure
