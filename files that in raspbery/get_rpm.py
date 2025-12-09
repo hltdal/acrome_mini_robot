@@ -43,8 +43,8 @@ if port is None:
 
 m = Master(port)
 
-ID1 = 0 # Sol Motor
-ID2 = 1 # Sağ Motor
+ID1 = 3 # Sol Motor
+ID2 = 2 # Sağ Motor
 
 # Motorları sisteme tanıt
 m.attach(Red(ID1))
@@ -86,9 +86,15 @@ try:
                 target_l = float(command["L"])
                 target_r = float(command["R"])
                 
+                val_for_id1 = target_l
+                val_for_id2 = target_r
+                
+                motor_1_speed = val_for_id1 * 1   # Gerekirse -1 yap
+                motor_2_speed = val_for_id2 * -1   # Gerekirse -1 yap
+                
                 # 3. Motorlara Hızı Uygula
-                m.set_velocity(ID1, target_l)
-                m.set_velocity(ID2, target_r)
+                m.set_velocity(ID1, motor_1_speed)
+                m.set_velocity(ID2, motor_2_speed)
                 
                 # Debug (İstersen açabilirsin, çok hızlı veri gelirse terminali doldurur)
                 # print(f"Hız Ayarlandı -> L: {target_l}, R: {target_r}")

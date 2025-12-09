@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# python3 /home/halit/acrome_mini_robot/src/set_slam/set_slam/launch/teleop.py
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64MultiArray
