@@ -1,28 +1,65 @@
-import socket, json
+import socket
+import json
 
-# Raspberry'den gelecek odometry
-UDP_IP = "0.0.0.0"
-UDP_PORT = 5005
-sock_recv = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock_recv.bind((UDP_IP, UDP_PORT))
+# --- AYARLAR ---
+WSL_LISTEN_IP = "0.0.0.0"   # Tüm arayüzlerden dinle
+WSL_LISTEN_PORT = 5006      # WSL'den veriyi alacağımız port
 
-# WSL TCP server bilgisi
-TCP_IP = "localhost"  # WSL2’de Windows’tan erişim için localhost değil, WSL IP olmalı. Genelde: 172.20.x.x
-TCP_PORT = 5006
-sock_send = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock_send.connect((TCP_IP, TCP_PORT))
+# Raspberry Pi IP Adresi (Kendi Pi IP'n ile değiştir)
+RASPBERRY_IP = "192.168.1.153"
+RASPBERRY_PORT = 5005       # Pi'ye göndereceğimiz port
 
-print("Listening for odometry data...")
+def start_relay():
+    # 1. WSL'den dinlemek için TCP Sunucusu
+    server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_sock.bind((WSL_LISTEN_IP, WSL_LISTEN_PORT))
+    server_sock.listen(1)
+    
+    # 2. Raspberry Pi'ye göndermek için UDP Soketi
+    udp_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    
+    print(f"Relay Başlatıldı!")
+    print(f"DİNLİYOR (WSL'den): Port {WSL_LISTEN_PORT}")
+    print(f"HEDEF (Raspberry Pi): {RASPBERRY_IP}:{RASPBERRY_PORT}")
+    
+    while True:
+        print("\nWSL'den bağlantı bekleniyor...")
+        conn, addr = server_sock.accept()
+        print(f"Bağlandı: {addr}")
+        
+        try:
+            buffer = ""
+            while True:
+                data = conn.recv(1024)
+                if not data:
+                    break
+                
+                # Gelen veriyi buffer'a ekle
+                buffer += data.decode('utf-8')
+                
+                # Satır satır işle (JSON mesajları \n ile ayrılır)
+                while "\n" in buffer:
+                    line, buffer = buffer.split("\n", 1)
+                    if not line.strip(): continue
+                    
+                    try:
+                        # Gelen veri: {"L": 50, "R": 50}
+                        # JSON kontrolü (sadece geçerli veriyi gönderelim)
+                        json_obj = json.loads(line)
+                        
+                        # Raspberry Pi'ye Ham JSON gönder
+                        msg_bytes = line.encode('utf-8')
+                        udp_sock.sendto(msg_bytes, (RASPBERRY_IP, RASPBERRY_PORT))
+                        
+                        print(f"\rİletildi -> Pi: {line}", end="")
+                        
+                    except json.JSONDecodeError:
+                        print(f"Hatalı JSON: {line}")
+                        
+        except Exception as e:
+            print(f"Bağlantı hatası: {e}")
+        finally:
+            conn.close()
 
-while True:
-    data, addr = sock_recv.recvfrom(1024)
-    odom = json.loads(data.decode("utf-8"))
-    print(f"Received from {addr}: {odom}")
-    odom_data = {
-        "x": odom["x"], "y": odom["y"], "theta": odom["theta"],
-        "v": odom["v"], "w": odom["w"],
-        "rpm_left": odom["rpm_left"], "rpm_right": odom["rpm_right"],
-        "timestamp": odom["timestamp"]
-    }
-    message = json.dumps(odom_data)
-    sock_send.send(message.encode("utf-8"))
+if __name__ == "__main__":
+    start_relay()

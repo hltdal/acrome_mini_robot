@@ -11,7 +11,11 @@ setup.py
 publish_lidar/__init__.py
 publish_lidar/get_scan_from_raspbery.py
 publish_lidar/publish_synchronous.py
+publish_lidar.egg-info/PKG-INFO
+publish_lidar.egg-info/SOURCES.txt
+publish_lidar.egg-info/dependency_links.txt
+publish_lidar.egg-info/entry_points.txt
+publish_lidar.egg-info/requires.txt
+publish_lidar.egg-info/top_level.txt
+publish_lidar.egg-info/zip-safe
 resource/publish_lidar
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py

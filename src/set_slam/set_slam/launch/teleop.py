@@ -52,13 +52,13 @@ class DifferentialOdometry:
         self.theta = 0.0
 
     def update(self, rpm_left, rpm_right, dt):
-        wl = (rpm_left * 2 * math.pi) / 60.0
-        wr = (rpm_right * 2 * math.pi) / 60.0
+        wl = (rpm_left * 2 * math.pi) / (-60.0)
+        wr = (rpm_right * 2 * math.pi) / (-60.0)
         vl = wl * self.wheel_radius
         vr = wr * self.wheel_radius
 
-        v = (vr + vl) / 2.0
-        w = (vl - vr) / self.wheel_separation
+        v = - (vr + vl) / 2.0
+        w = (vr - vl) / self.wheel_separation
 
         delta_theta = w * dt
         mid_theta = self.theta + (delta_theta / 2.0)
@@ -166,7 +166,7 @@ class TeleopNode(Node):
     def publish_velocity(self):
         # 1. Simülasyon
         msg = Float64MultiArray()
-        msg.data = [self.left_rpm/60.0, self.right_rpm/60.0] 
+        msg.data = [self.left_rpm/(7.5), self.right_rpm/(7.5)] 
         self.vel_publisher.publish(msg)
 
         # 2. Gerçek Robot (Windows Relay)
@@ -192,7 +192,30 @@ class TeleopNode(Node):
         odom_msg.pose.pose.position.y = y
         odom_msg.pose.pose.position.z = 0.0
         odom_msg.pose.pose.orientation = q
+
+        # EKF için Kovaryans Değerleri (GÜVEN MATRİSİ)
+        # Çapraz elemanlar: x, y, z, roll, pitch, yaw
+        # Tekerlek odometrisi X ve Yaw konusunda iyidir ama kayabilir.
+        # Değer ne kadar küçükse, EKF ona o kadar güvenir.
+        odom_msg.pose.covariance = [
+            0.01, 0.0, 0.0, 0.0, 0.0, 0.0,  # X hatası (düşük)
+            0.0, 0.01, 0.0, 0.0, 0.0, 0.0,  # Y hatası
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.0,   # Z
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.0,   # Roll
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.0,   # Pitch
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.1    # Yaw hatası (dönüşte kayma olabilir)
+        ]
         
+        # Hız kovaryansı (Twist)
+        odom_msg.twist.covariance = [
+            0.01, 0.0, 0.0, 0.0, 0.0, 0.0,  # Vx
+            0.0, 0.01, 0.0, 0.0, 0.0, 0.0,  # Vy
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.0, 0.1    # Vyaw
+        ]
+
         odom_msg.twist.twist.linear.x = v
         odom_msg.twist.twist.angular.z = w
 

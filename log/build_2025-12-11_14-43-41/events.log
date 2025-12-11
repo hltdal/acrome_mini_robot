@@ -1,0 +1,374 @@
+[0.000000] (-) TimerEvent: {}
+[0.000314] (publish_lidar) JobQueued: {'identifier': 'publish_lidar', 'dependencies': OrderedDict()}
+[0.000336] (rf2o_laser_odometry) JobQueued: {'identifier': 'rf2o_laser_odometry', 'dependencies': OrderedDict()}
+[0.000358] (set_slam) JobQueued: {'identifier': 'set_slam', 'dependencies': OrderedDict()}
+[0.000859] (publish_lidar) JobStarted: {'identifier': 'publish_lidar'}
+[0.006570] (rf2o_laser_odometry) JobStarted: {'identifier': 'rf2o_laser_odometry'}
+[0.009752] (set_slam) JobStarted: {'identifier': 'set_slam'}
+[0.100078] (-) TimerEvent: {}
+[0.154697] (rf2o_laser_odometry) JobProgress: {'identifier': 'rf2o_laser_odometry', 'progress': 'cmake'}
+[0.156494] (rf2o_laser_odometry) Command: {'cmd': ['/usr/bin/cmake', '/home/halit/acrome_mini_robot/src/rf2o_laser_odometry', '-DCMAKE_INSTALL_PREFIX=/home/halit/acrome_mini_robot/install/rf2o_laser_odometry'], 'cwd': '/home/halit/acrome_mini_robot/build/rf2o_laser_odometry', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'halit', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/halit', 'OLDPWD': '/home/halit', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-24', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/halit/acrome_mini_robot/install:/home/halit/acrome_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'halit', 'NAME': 'Halit', 'WSL_INTEROP': '/run/WSL/587_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/halit/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/System32/HWAudioDriverLibs:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Users/Administrator/AppData/Local/Microsoft/WindowsApps:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/windows/system32/HWAudioDriver/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/CMake/bin:/mnt/c/Program Files/dotnet/:/mnt/d/matlab/bin:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/halit/Desktop/micro/compiler/arm-gnu-toolchain-14.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/halit/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/halit/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/PyCharm Community Edition 2024.3.2/bin:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/halit/acrome_mini_robot/build/rf2o_laser_odometry', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/halit/acrome_mini_robot/build/set_slam:/home/halit/acrome_mini_robot/build/publish_lidar:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_odom/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[0.200219] (-) TimerEvent: {}
+[0.300586] (-) TimerEvent: {}
+[0.350667] (rf2o_laser_odometry) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.400687] (-) TimerEvent: {}
+[0.501880] (-) TimerEvent: {}
+[0.602274] (-) TimerEvent: {}
+[0.702665] (-) TimerEvent: {}
+[0.742975] (set_slam) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/set_slam', 'build', '--build-base', '/home/halit/acrome_mini_robot/build/set_slam/build', 'install', '--record', '/home/halit/acrome_mini_robot/build/set_slam/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/halit/acrome_mini_robot/src/set_slam', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'halit', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/halit', 'OLDPWD': '/home/halit', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-24', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/halit/acrome_mini_robot/install:/home/halit/acrome_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'halit', 'NAME': 'Halit', 'WSL_INTEROP': '/run/WSL/587_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/halit/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/System32/HWAudioDriverLibs:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Users/Administrator/AppData/Local/Microsoft/WindowsApps:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/windows/system32/HWAudioDriver/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/CMake/bin:/mnt/c/Program Files/dotnet/:/mnt/d/matlab/bin:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/halit/Desktop/micro/compiler/arm-gnu-toolchain-14.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/halit/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/halit/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/PyCharm Community Edition 2024.3.2/bin:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/halit/acrome_mini_robot/build/set_slam', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/halit/acrome_mini_robot/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/build/set_slam:/home/halit/acrome_mini_robot/build/publish_lidar:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_odom/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': ''}, 'shell': False}
+[0.776210] (publish_lidar) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/publish_lidar', 'build', '--build-base', '/home/halit/acrome_mini_robot/build/publish_lidar/build', 'install', '--record', '/home/halit/acrome_mini_robot/build/publish_lidar/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/halit/acrome_mini_robot/src/publish_lidar', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'halit', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/halit', 'OLDPWD': '/home/halit', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-24', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/halit/acrome_mini_robot/install:/home/halit/acrome_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'halit', 'NAME': 'Halit', 'WSL_INTEROP': '/run/WSL/587_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/halit/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/System32/HWAudioDriverLibs:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Users/Administrator/AppData/Local/Microsoft/WindowsApps:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/windows/system32/HWAudioDriver/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/CMake/bin:/mnt/c/Program Files/dotnet/:/mnt/d/matlab/bin:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/halit/Desktop/micro/compiler/arm-gnu-toolchain-14.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/halit/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/halit/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/PyCharm Community Edition 2024.3.2/bin:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/halit/acrome_mini_robot/build/publish_lidar', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/halit/acrome_mini_robot/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/build/set_slam:/home/halit/acrome_mini_robot/build/publish_lidar:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_odom/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': ''}, 'shell': False}
+[0.801083] (rf2o_laser_odometry) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.802932] (-) TimerEvent: {}
+[0.903362] (-) TimerEvent: {}
+[0.956003] (set_slam) StdoutLine: {'line': b'running egg_info\n'}
+[0.956356] (set_slam) StdoutLine: {'line': b'creating ../../build/set_slam/set_slam.egg-info\n'}
+[0.964647] (publish_lidar) StdoutLine: {'line': b'running egg_info\n'}
+[0.964958] (publish_lidar) StdoutLine: {'line': b'creating ../../build/publish_lidar/publish_lidar.egg-info\n'}
+[0.975962] (set_slam) StdoutLine: {'line': b'writing ../../build/set_slam/set_slam.egg-info/PKG-INFO\n'}
+[0.976217] (set_slam) StdoutLine: {'line': b'writing dependency_links to ../../build/set_slam/set_slam.egg-info/dependency_links.txt\n'}
+[0.976398] (set_slam) StdoutLine: {'line': b'writing entry points to ../../build/set_slam/set_slam.egg-info/entry_points.txt\n'}
+[0.976490] (set_slam) StdoutLine: {'line': b'writing requirements to ../../build/set_slam/set_slam.egg-info/requires.txt\n'}
+[0.976570] (set_slam) StdoutLine: {'line': b'writing top-level names to ../../build/set_slam/set_slam.egg-info/top_level.txt\n'}
+[0.976611] (set_slam) StdoutLine: {'line': b"writing manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'\n"}
+[0.977880] (publish_lidar) StdoutLine: {'line': b'writing ../../build/publish_lidar/publish_lidar.egg-info/PKG-INFO\n'}
+[0.978153] (publish_lidar) StdoutLine: {'line': b'writing dependency_links to ../../build/publish_lidar/publish_lidar.egg-info/dependency_links.txt\n'}
+[0.978233] (publish_lidar) StdoutLine: {'line': b'writing entry points to ../../build/publish_lidar/publish_lidar.egg-info/entry_points.txt\n'}
+[0.978579] (publish_lidar) StdoutLine: {'line': b'writing requirements to ../../build/publish_lidar/publish_lidar.egg-info/requires.txt\n'}
+[0.978639] (publish_lidar) StdoutLine: {'line': b'writing top-level names to ../../build/publish_lidar/publish_lidar.egg-info/top_level.txt\n'}
+[0.978744] (publish_lidar) StdoutLine: {'line': b"writing manifest file '../../build/publish_lidar/publish_lidar.egg-info/SOURCES.txt'\n"}
+[1.003261] (set_slam) StdoutLine: {'line': b"reading manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'\n"}
+[1.003398] (-) TimerEvent: {}
+[1.003832] (set_slam) StdoutLine: {'line': b"writing manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'\n"}
+[1.004098] (set_slam) StdoutLine: {'line': b'running build\n'}
+[1.004197] (set_slam) StdoutLine: {'line': b'running build_py\n'}
+[1.004393] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/build/set_slam/build\n'}
+[1.004460] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/build/set_slam/build/lib\n'}
+[1.004630] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam\n'}
+[1.004961] (set_slam) StdoutLine: {'line': b'copying set_slam/__init__.py -> /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam\n'}
+[1.005048] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes\n'}
+[1.005201] (set_slam) StdoutLine: {'line': b'copying set_slam/nodes/odom_to_tf_broadcaster.py -> /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes\n'}
+[1.005585] (publish_lidar) StdoutLine: {'line': b"reading manifest file '../../build/publish_lidar/publish_lidar.egg-info/SOURCES.txt'\n"}
+[1.005746] (set_slam) StdoutLine: {'line': b'copying set_slam/nodes/__init__.py -> /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes\n'}
+[1.005945] (set_slam) StdoutLine: {'line': b'running install\n'}
+[1.006070] (publish_lidar) StdoutLine: {'line': b"writing manifest file '../../build/publish_lidar/publish_lidar.egg-info/SOURCES.txt'\n"}
+[1.006187] (publish_lidar) StdoutLine: {'line': b'running build\n'}
+[1.006370] (publish_lidar) StdoutLine: {'line': b'running build_py\n'}
+[1.006429] (publish_lidar) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/build/publish_lidar/build\n'}
+[1.006568] (publish_lidar) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/build/publish_lidar/build/lib\n'}
+[1.006721] (publish_lidar) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar\n'}
+[1.006848] (publish_lidar) StdoutLine: {'line': b'copying publish_lidar/publish_synchronous.py -> /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar\n'}
+[1.007112] (publish_lidar) StdoutLine: {'line': b'copying publish_lidar/get_scan_from_raspbery.py -> /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar\n'}
+[1.007395] (publish_lidar) StdoutLine: {'line': b'copying publish_lidar/__init__.py -> /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar\n'}
+[1.007753] (publish_lidar) StdoutLine: {'line': b'running install\n'}
+[1.010835] (set_slam) StdoutLine: {'line': b'running install_lib\n'}
+[1.012442] (publish_lidar) StdoutLine: {'line': b'running install_lib\n'}
+[1.024099] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam\n'}
+[1.024383] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes\n'}
+[1.024711] (set_slam) StdoutLine: {'line': b'copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes/odom_to_tf_broadcaster.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes\n'}
+[1.025076] (set_slam) StdoutLine: {'line': b'copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes/__init__.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes\n'}
+[1.025165] (set_slam) StdoutLine: {'line': b'copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/__init__.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam\n'}
+[1.025338] (set_slam) StdoutLine: {'line': b'byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes/odom_to_tf_broadcaster.py to odom_to_tf_broadcaster.cpython-312.pyc\n'}
+[1.025585] (publish_lidar) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar\n'}
+[1.025777] (publish_lidar) StdoutLine: {'line': b'copying /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar/publish_synchronous.py -> /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar\n'}
+[1.025926] (publish_lidar) StdoutLine: {'line': b'copying /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar/get_scan_from_raspbery.py -> /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar\n'}
+[1.026107] (set_slam) StdoutLine: {'line': b'byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes/__init__.py to __init__.cpython-312.pyc\n'}
+[1.026164] (publish_lidar) StdoutLine: {'line': b'copying /home/halit/acrome_mini_robot/build/publish_lidar/build/lib/publish_lidar/__init__.py -> /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar\n'}
+[1.026364] (set_slam) StdoutLine: {'line': b'byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/__init__.py to __init__.cpython-312.pyc\n'}
+[1.026470] (publish_lidar) StdoutLine: {'line': b'byte-compiling /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/publish_synchronous.py to publish_synchronous.cpython-312.pyc\n'}
+[1.026569] (set_slam) StdoutLine: {'line': b'running install_data\n'}
+[1.026759] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/ament_index\n'}
+[1.026859] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index\n'}
+[1.027127] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index/packages\n'}
+[1.027407] (set_slam) StdoutLine: {'line': b'copying resource/set_slam -> /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index/packages\n'}
+[1.027587] (set_slam) StdoutLine: {'line': b'copying package.xml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam\n'}
+[1.027680] (publish_lidar) StdoutLine: {'line': b'byte-compiling /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/get_scan_from_raspbery.py to get_scan_from_raspbery.cpython-312.pyc\n'}
+[1.027726] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch\n'}
+[1.027771] (set_slam) StdoutLine: {'line': b'copying set_slam/launch/teleop.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch\n'}
+[1.027920] (set_slam) StdoutLine: {'line': b'copying set_slam/launch/display.launch.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch\n'}
+[1.028066] (set_slam) StdoutLine: {'line': b'copying set_slam/launch/slam_launch.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch\n'}
+[1.028215] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config\n'}
+[1.028518] (set_slam) StdoutLine: {'line': b'copying config/controllers_params.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config\n'}
+[1.028661] (set_slam) StdoutLine: {'line': b'copying config/mapper_params_online_sync.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config\n'}
+[1.028733] (set_slam) StdoutLine: {'line': b'copying config/ekf.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config\n'}
+[1.028785] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/urdf\n'}
+[1.028926] (publish_lidar) StdoutLine: {'line': b'byte-compiling /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar/__init__.py to __init__.cpython-312.pyc\n'}
+[1.028987] (set_slam) StdoutLine: {'line': b'copying urdf/acrome_mini_robot.xacro -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/urdf\n'}
+[1.029075] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes\n'}
+[1.029507] (set_slam) StdoutLine: {'line': b'copying meshes/base_link.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes\n'}
+[1.029618] (publish_lidar) StdoutLine: {'line': b'running install_data\n'}
+[1.029720] (publish_lidar) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/publish_lidar/share/ament_index\n'}
+[1.029780] (publish_lidar) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/publish_lidar/share/ament_index/resource_index\n'}
+[1.029819] (publish_lidar) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/publish_lidar/share/ament_index/resource_index/packages\n'}
+[1.029896] (publish_lidar) StdoutLine: {'line': b'copying resource/publish_lidar -> /home/halit/acrome_mini_robot/install/publish_lidar/share/ament_index/resource_index/packages\n'}
+[1.029934] (publish_lidar) StdoutLine: {'line': b'copying package.xml -> /home/halit/acrome_mini_robot/install/publish_lidar/share/publish_lidar\n'}
+[1.030019] (publish_lidar) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.045846] (publish_lidar) StdoutLine: {'line': b'Copying ../../build/publish_lidar/publish_lidar.egg-info to /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish_lidar-0.0.0-py3.12.egg-info\n'}
+[1.046613] (publish_lidar) StdoutLine: {'line': b'running install_scripts\n'}
+[1.061921] (set_slam) StdoutLine: {'line': b'copying meshes/left_wheel.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes\n'}
+[1.062454] (set_slam) StdoutLine: {'line': b'copying meshes/right_wheel.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes\n'}
+[1.067418] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/worlds\n'}
+[1.067512] (set_slam) StdoutLine: {'line': b'copying worlds/empty_with_ground.sdf -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/worlds\n'}
+[1.067553] (set_slam) StdoutLine: {'line': b'creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/rviz\n'}
+[1.067590] (set_slam) StdoutLine: {'line': b'copying rviz/fixed.rviz -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/rviz\n'}
+[1.067624] (set_slam) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.078469] (set_slam) StdoutLine: {'line': b'Copying ../../build/set_slam/set_slam.egg-info to /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam-0.0.0-py3.12.egg-info\n'}
+[1.079321] (set_slam) StdoutLine: {'line': b'running install_scripts\n'}
+[1.103522] (-) TimerEvent: {}
+[1.143200] (publish_lidar) StdoutLine: {'line': b'Installing get_scan_from_raspbery script to /home/halit/acrome_mini_robot/install/publish_lidar/lib/publish_lidar\n'}
+[1.143663] (publish_lidar) StdoutLine: {'line': b'Installing publish_synchronous script to /home/halit/acrome_mini_robot/install/publish_lidar/lib/publish_lidar\n'}
+[1.143817] (publish_lidar) StdoutLine: {'line': b"writing list of installed files to '/home/halit/acrome_mini_robot/build/publish_lidar/install.log'\n"}
+[1.159453] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.166421] (publish_lidar) CommandEnded: {'returncode': 0}
+[1.172827] (publish_lidar) JobEnded: {'identifier': 'publish_lidar', 'rc': 0}
+[1.186085] (set_slam) StdoutLine: {'line': b'Installing odom_to_tf_broadcaster script to /home/halit/acrome_mini_robot/install/set_slam/lib/set_slam\n'}
+[1.186595] (set_slam) StdoutLine: {'line': b"writing list of installed files to '/home/halit/acrome_mini_robot/build/set_slam/install.log'\n"}
+[1.203639] (-) TimerEvent: {}
+[1.207186] (set_slam) CommandEnded: {'returncode': 0}
+[1.212056] (set_slam) JobEnded: {'identifier': 'set_slam', 'rc': 0}
+[1.303798] (-) TimerEvent: {}
+[1.364309] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.369909] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.371580] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.372660] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.403920] (-) TimerEvent: {}
+[1.448577] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.504061] (-) TimerEvent: {}
+[1.604382] (-) TimerEvent: {}
+[1.629644] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.635460] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.635693] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.635992] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.652758] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.704773] (-) TimerEvent: {}
+[1.771073] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.804960] (-) TimerEvent: {}
+[1.862739] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rclcpp: 28.1.11 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[1.905156] (-) TimerEvent: {}
+[2.002728] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[2.005337] (-) TimerEvent: {}
+[2.015395] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.031028] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.046831] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.107751] (-) TimerEvent: {}
+[2.109957] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[2.112819] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.193310] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[2.207977] (-) TimerEvent: {}
+[2.274131] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[2.308106] (-) TimerEvent: {}
+[2.320836] (rf2o_laser_odometry) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.408270] (-) TimerEvent: {}
+[2.443405] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[2.454799] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[2.467381] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.14 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[2.503838] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[2.504913] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[2.504975] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.508387] (-) TimerEvent: {}
+[2.608783] (-) TimerEvent: {}
+[2.618845] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[2.636440] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[2.669956] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0")  \n'}
+[2.709040] (-) TimerEvent: {}
+[2.739938] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Configuring done (2.6s)\n'}
+[2.754637] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[2.757150] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Build files have been written to: /home/halit/acrome_mini_robot/build/rf2o_laser_odometry\n'}
+[2.764615] (rf2o_laser_odometry) CommandEnded: {'returncode': 0}
+[2.765955] (rf2o_laser_odometry) JobProgress: {'identifier': 'rf2o_laser_odometry', 'progress': 'build'}
+[2.766010] (rf2o_laser_odometry) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/halit/acrome_mini_robot/build/rf2o_laser_odometry', '--', '-j4', '-l4'], 'cwd': '/home/halit/acrome_mini_robot/build/rf2o_laser_odometry', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'halit', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/halit', 'OLDPWD': '/home/halit', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-24', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/halit/acrome_mini_robot/install:/home/halit/acrome_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'halit', 'NAME': 'Halit', 'WSL_INTEROP': '/run/WSL/587_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/halit/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/System32/HWAudioDriverLibs:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Users/Administrator/AppData/Local/Microsoft/WindowsApps:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/windows/system32/HWAudioDriver/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/CMake/bin:/mnt/c/Program Files/dotnet/:/mnt/d/matlab/bin:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/halit/Desktop/micro/compiler/arm-gnu-toolchain-14.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/halit/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/halit/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/PyCharm Community Edition 2024.3.2/bin:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/halit/acrome_mini_robot/build/rf2o_laser_odometry', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/halit/acrome_mini_robot/build/set_slam:/home/halit/acrome_mini_robot/build/publish_lidar:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_odom/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[2.802703] (rf2o_laser_odometry) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/rf2o_laser_odometry.dir/src/CLaserOdometry2D.cpp.o\x1b[0m\n'}
+[2.803789] (rf2o_laser_odometry) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2D.cpp.o\x1b[0m\n'}
+[2.803908] (rf2o_laser_odometry) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2DNode.cpp.o\x1b[0m\n'}
+[2.809210] (-) TimerEvent: {}
+[2.909597] (-) TimerEvent: {}
+[3.010089] (-) TimerEvent: {}
+[3.110397] (-) TimerEvent: {}
+[3.210819] (-) TimerEvent: {}
+[3.311307] (-) TimerEvent: {}
+[3.411599] (-) TimerEvent: {}
+[3.512037] (-) TimerEvent: {}
+[3.612468] (-) TimerEvent: {}
+[3.712936] (-) TimerEvent: {}
+[3.813385] (-) TimerEvent: {}
+[3.914101] (-) TimerEvent: {}
+[4.014730] (-) TimerEvent: {}
+[4.115422] (-) TimerEvent: {}
+[4.216053] (-) TimerEvent: {}
+[4.316852] (-) TimerEvent: {}
+[4.417360] (-) TimerEvent: {}
+[4.518498] (-) TimerEvent: {}
+[4.619042] (-) TimerEvent: {}
+[4.720065] (-) TimerEvent: {}
+[4.820498] (-) TimerEvent: {}
+[4.922339] (-) TimerEvent: {}
+[5.022942] (-) TimerEvent: {}
+[5.123525] (-) TimerEvent: {}
+[5.224204] (-) TimerEvent: {}
+[5.324569] (-) TimerEvent: {}
+[5.425074] (-) TimerEvent: {}
+[5.525644] (-) TimerEvent: {}
+[5.626157] (-) TimerEvent: {}
+[5.728708] (-) TimerEvent: {}
+[5.829284] (-) TimerEvent: {}
+[5.932148] (-) TimerEvent: {}
+[6.033071] (-) TimerEvent: {}
+[6.134452] (-) TimerEvent: {}
+[6.235559] (-) TimerEvent: {}
+[6.336743] (-) TimerEvent: {}
+[6.437960] (-) TimerEvent: {}
+[6.539164] (-) TimerEvent: {}
+[6.639575] (-) TimerEvent: {}
+[6.740296] (-) TimerEvent: {}
+[6.841827] (-) TimerEvent: {}
+[6.942308] (-) TimerEvent: {}
+[7.045841] (-) TimerEvent: {}
+[7.149747] (-) TimerEvent: {}
+[7.251236] (-) TimerEvent: {}
+[7.351568] (-) TimerEvent: {}
+[7.452475] (-) TimerEvent: {}
+[7.553287] (-) TimerEvent: {}
+[7.653681] (-) TimerEvent: {}
+[7.754219] (-) TimerEvent: {}
+[7.855727] (-) TimerEvent: {}
+[7.957749] (-) TimerEvent: {}
+[8.059127] (-) TimerEvent: {}
+[8.161159] (-) TimerEvent: {}
+[8.261942] (-) TimerEvent: {}
+[8.363622] (-) TimerEvent: {}
+[8.464154] (-) TimerEvent: {}
+[8.565697] (-) TimerEvent: {}
+[8.667508] (-) TimerEvent: {}
+[8.768313] (-) TimerEvent: {}
+[8.870283] (-) TimerEvent: {}
+[8.974696] (-) TimerEvent: {}
+[9.076939] (-) TimerEvent: {}
+[9.181305] (-) TimerEvent: {}
+[9.281911] (-) TimerEvent: {}
+[9.382961] (-) TimerEvent: {}
+[9.484585] (-) TimerEvent: {}
+[9.587611] (-) TimerEvent: {}
+[9.688188] (-) TimerEvent: {}
+[9.789486] (-) TimerEvent: {}
+[9.890745] (-) TimerEvent: {}
+[9.991398] (-) TimerEvent: {}
+[10.094262] (-) TimerEvent: {}
+[10.198714] (-) TimerEvent: {}
+[10.299086] (-) TimerEvent: {}
+[10.401055] (-) TimerEvent: {}
+[10.501900] (-) TimerEvent: {}
+[10.605672] (-) TimerEvent: {}
+[10.706382] (-) TimerEvent: {}
+[10.807477] (-) TimerEvent: {}
+[10.910822] (-) TimerEvent: {}
+[11.011336] (-) TimerEvent: {}
+[11.113800] (-) TimerEvent: {}
+[11.218116] (-) TimerEvent: {}
+[11.321624] (-) TimerEvent: {}
+[11.422051] (-) TimerEvent: {}
+[11.522548] (-) TimerEvent: {}
+[11.626311] (-) TimerEvent: {}
+[11.727020] (-) TimerEvent: {}
+[11.830785] (-) TimerEvent: {}
+[11.934838] (-) TimerEvent: {}
+[12.035353] (-) TimerEvent: {}
+[12.138943] (-) TimerEvent: {}
+[12.239627] (-) TimerEvent: {}
+[12.340460] (-) TimerEvent: {}
+[12.440991] (-) TimerEvent: {}
+[12.542210] (-) TimerEvent: {}
+[12.642706] (-) TimerEvent: {}
+[12.743501] (-) TimerEvent: {}
+[12.843896] (-) TimerEvent: {}
+[12.944515] (-) TimerEvent: {}
+[13.046707] (-) TimerEvent: {}
+[13.151057] (-) TimerEvent: {}
+[13.251522] (-) TimerEvent: {}
+[13.351905] (-) TimerEvent: {}
+[13.452380] (-) TimerEvent: {}
+[13.553869] (-) TimerEvent: {}
+[13.654873] (-) TimerEvent: {}
+[13.755291] (-) TimerEvent: {}
+[13.855672] (-) TimerEvent: {}
+[13.956284] (-) TimerEvent: {}
+[14.056817] (-) TimerEvent: {}
+[14.157777] (-) TimerEvent: {}
+[14.258360] (-) TimerEvent: {}
+[14.358928] (-) TimerEvent: {}
+[14.459595] (-) TimerEvent: {}
+[14.560830] (-) TimerEvent: {}
+[14.661207] (-) TimerEvent: {}
+[14.762839] (-) TimerEvent: {}
+[14.863368] (-) TimerEvent: {}
+[14.964989] (-) TimerEvent: {}
+[15.065366] (-) TimerEvent: {}
+[15.166086] (-) TimerEvent: {}
+[15.266436] (-) TimerEvent: {}
+[15.366960] (-) TimerEvent: {}
+[15.467321] (-) TimerEvent: {}
+[15.570516] (-) TimerEvent: {}
+[15.671059] (-) TimerEvent: {}
+[15.772650] (-) TimerEvent: {}
+[15.873113] (-) TimerEvent: {}
+[15.973990] (-) TimerEvent: {}
+[16.074531] (-) TimerEvent: {}
+[16.176671] (-) TimerEvent: {}
+[16.277090] (-) TimerEvent: {}
+[16.377493] (-) TimerEvent: {}
+[16.477989] (-) TimerEvent: {}
+[16.580813] (-) TimerEvent: {}
+[16.681280] (-) TimerEvent: {}
+[16.783393] (-) TimerEvent: {}
+[16.883697] (-) TimerEvent: {}
+[16.984155] (-) TimerEvent: {}
+[17.084496] (-) TimerEvent: {}
+[17.187645] (-) TimerEvent: {}
+[17.287983] (-) TimerEvent: {}
+[17.389581] (-) TimerEvent: {}
+[17.490192] (-) TimerEvent: {}
+[17.592424] (-) TimerEvent: {}
+[17.696279] (-) TimerEvent: {}
+[17.797612] (-) TimerEvent: {}
+[17.898171] (-) TimerEvent: {}
+[17.998656] (-) TimerEvent: {}
+[18.099226] (-) TimerEvent: {}
+[18.201249] (-) TimerEvent: {}
+[18.301751] (-) TimerEvent: {}
+[18.403102] (-) TimerEvent: {}
+[18.503465] (-) TimerEvent: {}
+[18.510923] (rf2o_laser_odometry) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking CXX static library librf2o_laser_odometry.a\x1b[0m\n'}
+[18.513469] (rf2o_laser_odometry) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable rf2o_laser_odometry_node\x1b[0m\n'}
+[18.603618] (-) TimerEvent: {}
+[18.679548] (rf2o_laser_odometry) StdoutLine: {'line': b'[100%] Built target rf2o_laser_odometry\n'}
+[18.703798] (-) TimerEvent: {}
+[18.804148] (-) TimerEvent: {}
+[18.904478] (-) TimerEvent: {}
+[19.006866] (-) TimerEvent: {}
+[19.107771] (-) TimerEvent: {}
+[19.211318] (-) TimerEvent: {}
+[19.228589] (rf2o_laser_odometry) StdoutLine: {'line': b'[100%] Built target rf2o_laser_odometry_node\n'}
+[19.237934] (rf2o_laser_odometry) CommandEnded: {'returncode': 0}
+[19.238673] (rf2o_laser_odometry) JobProgress: {'identifier': 'rf2o_laser_odometry', 'progress': 'install'}
+[19.245430] (rf2o_laser_odometry) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/halit/acrome_mini_robot/build/rf2o_laser_odometry'], 'cwd': '/home/halit/acrome_mini_robot/build/rf2o_laser_odometry', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'halit', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/halit', 'OLDPWD': '/home/halit', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-24', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/halit/acrome_mini_robot/install:/home/halit/acrome_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'halit', 'NAME': 'Halit', 'WSL_INTEROP': '/run/WSL/587_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/halit/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/System32/HWAudioDriverLibs:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Users/Administrator/AppData/Local/Microsoft/WindowsApps:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/windows/system32/HWAudioDriver/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/CMake/bin:/mnt/c/Program Files/dotnet/:/mnt/d/matlab/bin:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/halit/Desktop/micro/compiler/arm-gnu-toolchain-14.3.rel1-mingw-w64-x86_64-arm-none-eabi/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/halit/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/halit/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/halit/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/PyCharm Community Edition 2024.3.2/bin:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/halit/acrome_mini_robot/build/rf2o_laser_odometry', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/halit/acrome_mini_robot/build/set_slam:/home/halit/acrome_mini_robot/build/publish_lidar:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_odom/lib/python3.12/site-packages:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/opt/ros/jazzy', 'WSLENV': ''}), 'shell': False}
+[19.251388] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[19.251731] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/lib/rf2o_laser_odometry/rf2o_laser_odometry_node\n'}
+[19.261658] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/halit/acrome_mini_robot/install/rf2o_laser_odometry/lib/rf2o_laser_odometry/rf2o_laser_odometry_node" to ""\n'}
+[19.261755] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch\n'}
+[19.262121] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/rf2o_laser_odometry.launch.py\n'}
+[19.263744] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/ament_index/resource_index/package_run_dependencies/rf2o_laser_odometry\n'}
+[19.264041] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/ament_index/resource_index/parent_prefix_path/rf2o_laser_odometry\n'}
+[19.264209] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.sh\n'}
+[19.264319] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.dsv\n'}
+[19.264419] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.sh\n'}
+[19.264532] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.dsv\n'}
+[19.264602] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.bash\n'}
+[19.264699] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.sh\n'}
+[19.264749] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.zsh\n'}
+[19.264842] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.dsv\n'}
+[19.264891] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.dsv\n'}
+[19.265007] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/ament_index/resource_index/packages/rf2o_laser_odometry\n'}
+[19.265326] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig.cmake\n'}
+[19.265406] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig-version.cmake\n'}
+[19.265510] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Installing: /home/halit/acrome_mini_robot/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.xml\n'}
+[19.267506] (rf2o_laser_odometry) CommandEnded: {'returncode': 0}
+[19.275107] (rf2o_laser_odometry) JobEnded: {'identifier': 'rf2o_laser_odometry', 'rc': 0}
+[19.276272] (-) EventReactorShutdown: {}

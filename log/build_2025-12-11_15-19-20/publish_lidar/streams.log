@@ -1,0 +1,18 @@
+[0.742s] Invoking command in '/home/halit/acrome_mini_robot/build/publish_lidar': PYTHONPATH=/home/halit/acrome_mini_robot/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/halit/acrome_mini_robot/build/publish_lidar/build --no-deps symlink_data
+[0.965s] running develop
+[1.098s] running egg_info
+[1.111s] writing publish_lidar.egg-info/PKG-INFO
+[1.111s] writing dependency_links to publish_lidar.egg-info/dependency_links.txt
+[1.112s] writing entry points to publish_lidar.egg-info/entry_points.txt
+[1.112s] writing requirements to publish_lidar.egg-info/requires.txt
+[1.112s] writing top-level names to publish_lidar.egg-info/top_level.txt
+[1.138s] reading manifest file 'publish_lidar.egg-info/SOURCES.txt'
+[1.139s] writing manifest file 'publish_lidar.egg-info/SOURCES.txt'
+[1.153s] running build_ext
+[1.153s] Creating /home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages/publish-lidar.egg-link (link to .)
+[1.153s] Installing get_scan_from_raspbery script to /home/halit/acrome_mini_robot/install/publish_lidar/lib/publish_lidar
+[1.154s] Installing publish_synchronous script to /home/halit/acrome_mini_robot/install/publish_lidar/lib/publish_lidar
+[1.154s] 
+[1.154s] Installed /home/halit/acrome_mini_robot/build/publish_lidar
+[1.154s] running symlink_data
+[1.176s] Invoked command in '/home/halit/acrome_mini_robot/build/publish_lidar' returned '0': PYTHONPATH=/home/halit/acrome_mini_robot/build/publish_lidar/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/publish_lidar/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/halit/acrome_mini_robot/build/publish_lidar/build --no-deps symlink_data

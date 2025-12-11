@@ -1,1 +1,1 @@
-/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/publish_odom:/home/halit/acrome_mini_robot/install/publish_lidar:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy
+/home/halit/acrome_mini_robot/install/set_slam:/home/halit/acrome_mini_robot/install/rf2o_laser_odometry:/home/halit/acrome_mini_robot/install/publish_lidar:/home/halit/acrome_ws/install/acrome_mini_robot:/opt/ros/jazzy

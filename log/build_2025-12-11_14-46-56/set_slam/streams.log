@@ -1,0 +1,46 @@
+[0.556s] Invoking command in '/home/halit/acrome_mini_robot/build/set_slam': PYTHONPATH=/home/halit/acrome_mini_robot/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/halit/acrome_mini_robot/build/set_slam/build
+[0.757s] running develop
+[0.882s] Removing /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set-slam.egg-link (link to .)
+[0.903s] Invoked command in '/home/halit/acrome_mini_robot/build/set_slam' returned '0': PYTHONPATH=/home/halit/acrome_mini_robot/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/halit/acrome_mini_robot/build/set_slam/build
+[0.904s] Invoking command in '/home/halit/acrome_mini_robot/src/set_slam': PYTHONPATH=/home/halit/acrome_mini_robot/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/set_slam build --build-base /home/halit/acrome_mini_robot/build/set_slam/build install --record /home/halit/acrome_mini_robot/build/set_slam/install.log --single-version-externally-managed install_data --force
+[1.088s] running egg_info
+[1.099s] writing ../../build/set_slam/set_slam.egg-info/PKG-INFO
+[1.099s] writing dependency_links to ../../build/set_slam/set_slam.egg-info/dependency_links.txt
+[1.099s] writing entry points to ../../build/set_slam/set_slam.egg-info/entry_points.txt
+[1.099s] writing requirements to ../../build/set_slam/set_slam.egg-info/requires.txt
+[1.099s] writing top-level names to ../../build/set_slam/set_slam.egg-info/top_level.txt
+[1.123s] reading manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'
+[1.124s] writing manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'
+[1.124s] running build
+[1.125s] running build_py
+[1.125s] running install
+[1.129s] running install_lib
+[1.141s] creating /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam
+[1.142s] creating /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes
+[1.142s] copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes/odom_to_tf_broadcaster.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes
+[1.142s] copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes/__init__.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes
+[1.142s] copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/__init__.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam
+[1.142s] byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes/odom_to_tf_broadcaster.py to odom_to_tf_broadcaster.cpython-312.pyc
+[1.143s] byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes/__init__.py to __init__.cpython-312.pyc
+[1.143s] byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/__init__.py to __init__.cpython-312.pyc
+[1.144s] running install_data
+[1.144s] copying resource/set_slam -> /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index/packages
+[1.144s] copying package.xml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam
+[1.144s] copying set_slam/launch/teleop.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch
+[1.144s] copying set_slam/launch/display.launch.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch
+[1.144s] copying set_slam/launch/slam_launch.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch
+[1.144s] copying config/controllers_params.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config
+[1.144s] copying config/mapper_params_online_sync.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config
+[1.144s] copying config/ekf.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config
+[1.144s] copying urdf/acrome_mini_robot.xacro -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/urdf
+[1.144s] copying meshes/base_link.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes
+[1.172s] copying meshes/left_wheel.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes
+[1.173s] copying meshes/right_wheel.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes
+[1.174s] copying worlds/empty_with_ground.sdf -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/worlds
+[1.174s] copying rviz/fixed.rviz -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/rviz
+[1.174s] running install_egg_info
+[1.188s] Copying ../../build/set_slam/set_slam.egg-info to /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam-0.0.0-py3.12.egg-info
+[1.188s] running install_scripts
+[1.276s] Installing odom_to_tf_broadcaster script to /home/halit/acrome_mini_robot/install/set_slam/lib/set_slam
+[1.276s] writing list of installed files to '/home/halit/acrome_mini_robot/build/set_slam/install.log'
+[1.293s] Invoked command in '/home/halit/acrome_mini_robot/src/set_slam' returned '0': PYTHONPATH=/home/halit/acrome_mini_robot/build/set_slam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/set_slam build --build-base /home/halit/acrome_mini_robot/build/set_slam/build install --record /home/halit/acrome_mini_robot/build/set_slam/install.log --single-version-externally-managed install_data --force

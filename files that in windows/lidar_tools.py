@@ -12,19 +12,19 @@ TARGET_PORT = 5007
 def connect_to_wsl():
     while True:
         try:
-            print(f"WSL'e bağlanılıyor: {TARGET_IP}:{TARGET_PORT}")
+            print(f"Connecting to WSL: {TARGET_IP}:{TARGET_PORT}")
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.connect((TARGET_IP, TARGET_PORT))
-            print("WSL'e bağlantı başarılı!")
+            print("Connection to WSL successful!")
             return sock
         except Exception as e:
-            print(f"Bağlantı hatası: {e}, 5 sn sonra tekrar denenecek...")
+            print(f"Connection error: {e}, retrying in 5 seconds...")
             time.sleep(5)
 
 def main():
     udp_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     udp_sock.bind((UDP_IP, UDP_PORT))
-    print(f"UDP relay başlatıldı. Raspberry bekleniyor {UDP_PORT}...")
+    print(f"UDP started. Raspberry is listening on {UDP_PORT}...")
 
     tcp_sock = connect_to_wsl()
 

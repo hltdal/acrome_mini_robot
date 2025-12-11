@@ -27,17 +27,14 @@ ekf_filter_node:
     odom0_differential: false
     odom0_queue_size: 10
 
-    # --------------------------------------
     # SENSÖR 2: LIDAR ODOMETRY (rf2o)
-    # --------------------------------------
     odom1: /lidar_odom
-    # Lidar'dan KONUM (X, Y) ve AÇI (Yaw) alıyoruz. Harita için bu daha iyi.
-    odom1_config: [true,  true,  false,   # X, Y
-                   false, false, true,    # Yaw
+    odom1_config: [true,  true,  false,   # X, Y (Pozisyon değişimi hesaplanacak)
+                   false, false, true,    # Yaw (Açı değişimi hesaplanacak)
                    false, false, false,
                    false, false, false,
                    false, false, false]
-    odom1_differential: false # Pose kullandığımız için false
+    odom1_differential: true  # <--- BURAYI MUTLAKA TRUE YAP!
     odom1_queue_size: 10
     
     dynamic_process_noise_covariance: true

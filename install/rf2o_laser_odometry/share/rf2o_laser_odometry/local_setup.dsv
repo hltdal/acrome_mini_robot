@@ -1,2 +1,1 @@
-source;share/rf2o_laser_odometry/environment/ament_prefix_path.sh
-source;share/rf2o_laser_odometry/environment/path.sh
+/home/halit/acrome_mini_robot/build/rf2o_laser_odometry/ament_cmake_environment_hooks/local_setup.dsv

@@ -1,0 +1,58 @@
+running egg_info
+creating ../../build/set_slam/set_slam.egg-info
+writing ../../build/set_slam/set_slam.egg-info/PKG-INFO
+writing dependency_links to ../../build/set_slam/set_slam.egg-info/dependency_links.txt
+writing entry points to ../../build/set_slam/set_slam.egg-info/entry_points.txt
+writing requirements to ../../build/set_slam/set_slam.egg-info/requires.txt
+writing top-level names to ../../build/set_slam/set_slam.egg-info/top_level.txt
+writing manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'
+reading manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'
+writing manifest file '../../build/set_slam/set_slam.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/halit/acrome_mini_robot/build/set_slam/build
+creating /home/halit/acrome_mini_robot/build/set_slam/build/lib
+creating /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam
+copying set_slam/__init__.py -> /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam
+creating /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes
+copying set_slam/nodes/odom_to_tf_broadcaster.py -> /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes
+copying set_slam/nodes/__init__.py -> /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes
+running install
+running install_lib
+creating /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam
+creating /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes
+copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes/odom_to_tf_broadcaster.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes
+copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/nodes/__init__.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes
+copying /home/halit/acrome_mini_robot/build/set_slam/build/lib/set_slam/__init__.py -> /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam
+byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes/odom_to_tf_broadcaster.py to odom_to_tf_broadcaster.cpython-312.pyc
+byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/nodes/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/halit/acrome_mini_robot/install/set_slam/share/ament_index
+creating /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index
+creating /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index/packages
+copying resource/set_slam -> /home/halit/acrome_mini_robot/install/set_slam/share/ament_index/resource_index/packages
+copying package.xml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam
+creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch
+copying set_slam/launch/teleop.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch
+copying set_slam/launch/display.launch.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch
+copying set_slam/launch/slam_launch.py -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/launch
+creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config
+copying config/controllers_params.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config
+copying config/mapper_params_online_sync.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config
+copying config/ekf.yaml -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/config
+creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/urdf
+copying urdf/acrome_mini_robot.xacro -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/urdf
+creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes
+copying meshes/base_link.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes
+copying meshes/left_wheel.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes
+copying meshes/right_wheel.stl -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/meshes
+creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/worlds
+copying worlds/empty_with_ground.sdf -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/worlds
+creating /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/rviz
+copying rviz/fixed.rviz -> /home/halit/acrome_mini_robot/install/set_slam/share/set_slam/rviz
+running install_egg_info
+Copying ../../build/set_slam/set_slam.egg-info to /home/halit/acrome_mini_robot/install/set_slam/lib/python3.12/site-packages/set_slam-0.0.0-py3.12.egg-info
+running install_scripts
+Installing odom_to_tf_broadcaster script to /home/halit/acrome_mini_robot/install/set_slam/lib/set_slam
+writing list of installed files to '/home/halit/acrome_mini_robot/build/set_slam/install.log'
